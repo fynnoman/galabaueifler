@@ -8,45 +8,45 @@ export default function Header() {
 
   return (
     <header className="absolute top-0 left-0 right-0 z-10">
-      <nav className="mx-auto max-w-7xl px-6 py-8 lg:px-8 lg:py-12">
+      <nav className="mx-auto max-w-7xl px-4 py-4 md:px-6 md:py-8 lg:px-8 lg:py-12">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <Image
                 src="/F596091D-F9EA-4E77-8A3E-B0D535C72828.png"
                 alt="GALA BAUER Logo"
-                width={80}
-                height={80}
-                className="object-cover"
+                width={60}
+                height={60}
+                className="object-cover md:w-[80px] md:h-[80px]"
               />
             </a>
           </div>
           
           {/* Desktop Menu */}
-          <div className="hidden md:flex md:gap-8">
-            <a href="/#leistungen" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
+          <div className="hidden md:flex md:gap-6 lg:gap-8">
+            <a href="/#leistungen" className="text-xs lg:text-sm font-medium text-[#009746] hover:text-[#007a38]">
               LEISTUNGEN
             </a>
-            <a href="/#ueber-uns" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
+            <a href="/#ueber-uns" className="text-xs lg:text-sm font-medium text-[#009746] hover:text-[#007a38]">
               ÜBER UNS
             </a>
-            <a href="/#galerie" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
+            <a href="/#galerie" className="text-xs lg:text-sm font-medium text-[#009746] hover:text-[#007a38]">
               GALERIE
             </a>
-            <a href="/#preise" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
+            <a href="/#preise" className="text-xs lg:text-sm font-medium text-[#009746] hover:text-[#007a38]">
               PREISE
             </a>
-            <a href="/#faq" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
+            <a href="/#faq" className="text-xs lg:text-sm font-medium text-[#009746] hover:text-[#007a38]">
               FAQ
             </a>
-            <a href="/kontakt" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
+            <a href="/kontakt" className="text-xs lg:text-sm font-medium text-[#009746] hover:text-[#007a38]">
               KONTAKT
             </a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden"
+            className="md:hidden text-[#009746]"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             <svg
@@ -69,45 +69,45 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 space-y-2 pb-4">
+          <div className="md:hidden mt-4 space-y-3 pb-4 bg-white/90 backdrop-blur-md rounded-lg p-4">
             <a
               href="/#leistungen"
-              className="block text-sm font-medium text-[#009746] hover:text-[#007a38]"
+              className="block text-sm font-medium text-[#009746] hover:text-[#007a38] py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               LEISTUNGEN
             </a>
             <a
               href="/#ueber-uns"
-              className="block text-sm font-medium text-[#009746] hover:text-[#007a38]"
+              className="block text-sm font-medium text-[#009746] hover:text-[#007a38] py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               ÜBER UNS
             </a>
             <a
               href="/#galerie"
-              className="block text-sm font-medium text-[#009746] hover:text-[#007a38]"
+              className="block text-sm font-medium text-[#009746] hover:text-[#007a38] py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               GALERIE
             </a>
             <a
               href="/#preise"
-              className="block text-sm font-medium text-[#009746] hover:text-[#007a38]"
+              className="block text-sm font-medium text-[#009746] hover:text-[#007a38] py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               PREISE
             </a>
             <a
               href="/#faq"
-              className="block text-sm font-medium text-[#009746] hover:text-[#007a38]"
+              className="block text-sm font-medium text-[#009746] hover:text-[#007a38] py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               FAQ
             </a>
             <a
               href="/kontakt"
-              className="block text-sm font-medium text-[#009746] hover:text-[#007a38]"
+              className="block text-sm font-medium text-[#009746] hover:text-[#007a38] py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               KONTAKT
