@@ -7,7 +7,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-10 hidden">
+    <header className="absolute top-0 left-0 right-0 z-10">
       <nav className="mx-auto max-w-7xl px-6 py-8 lg:px-8 lg:py-12">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
@@ -32,6 +32,12 @@ export default function Header() {
             </a>
             <a href="/#galerie" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
               GALERIE
+            </a>
+            <a href="/#preise" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
+              PREISE
+            </a>
+            <a href="/#faq" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
+              FAQ
             </a>
             <a href="/kontakt" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
               KONTAKT
@@ -84,6 +90,20 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               GALERIE
+            </a>
+            <a
+              href="/#preise"
+              className="block text-sm font-medium text-[#009746] hover:text-[#007a38]"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              PREISE
+            </a>
+            <a
+              href="/#faq"
+              className="block text-sm font-medium text-[#009746] hover:text-[#007a38]"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              FAQ
             </a>
             <a
               href="/kontakt"

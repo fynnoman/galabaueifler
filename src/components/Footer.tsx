@@ -8,10 +8,10 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/logo.jpeg"
+                src="/F596091D-F9EA-4E77-8A3E-B0D535C72828.png"
                 alt="GALA BAUER Logo"
-                width={40}
-                height={40}
+                width={30}
+                height={30}
                 className="object-cover"
               />
               <h3 className="text-xl font-bold">GALA BAUER</h3>
