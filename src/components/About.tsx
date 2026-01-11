@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section id="ueber-uns" className="py-24 bg-white">
@@ -24,11 +26,7 @@ export default function About() {
             </div>
           </div>
           
-          <div className="bg-[#009746] h-[400px] lg:h-[500px] relative rounded-2xl overflow-hidden backdrop-blur-md bg-white/30">
-            {/* Placeholder for image */}
-            <div className="absolute inset-0 flex items-center justify-center text-white text-sm">
-              [Bild: Team bei der Arbeit]
-            </div>
+          <div className="bg-[#009746] h-[400px] lg:h-[500px] relative rounded-2xl overflow-hidden">
           </div>
         </div>
       </div>
