@@ -6,7 +6,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/A05AD9BA-404A-414C-99BB-17DC84F67782.png"
+          src="/D553C0D0-D282-416D-A6C0-6790EC285153.png"
           alt="Garten und Landschaftsbau"
           fill
           className="object-cover"
