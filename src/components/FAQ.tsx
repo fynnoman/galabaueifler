@@ -1,10 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
 
   const faqs = [
     {
@@ -46,7 +53,7 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-24 bg-[#009746]/10">
+    <section id="faq" className="py-24 bg-[#009746]/10" ref={containerRef}>
       <div className="mx-auto max-w-7xl pr-6 lg:pr-8">
         <h2 className="text-4xl lg:text-6xl font-bold mb-16 text-[#009746] text-center px-6 lg:px-8">
           HÄUFIGE FRAGEN
@@ -55,43 +62,59 @@ export default function FAQ() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Questions on the left */}
           <div className="space-y-4 pl-0">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="bg-white border-2 border-[#009746] rounded-2xl overflow-hidden"
-              >
-                <button
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+            {faqs.map((faq, index) => {
+              // Create individual progress for each card based on scroll
+              const start = index / faqs.length;
+              const end = (index + 1) / faqs.length;
+              
+              const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
+              const x = useTransform(scrollYProgress, [start, end], [-100, 0]);
+              
+              return (
+                <motion.div
+                  key={index}
+                  style={{ opacity, x }}
+                  className="bg-white border-2 border-[#009746] rounded-2xl overflow-hidden"
                 >
-                  <span className="text-lg font-bold text-[#009746]">
-                    {faq.question}
-                  </span>
-                  <svg
-                    className={`w-6 h-6 text-[#009746] transform transition-transform ${
-                      openIndex === index ? "rotate-180" : ""
-                    }`}
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+                  <button
+                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                   >
-                    <path d="M19 9l-7 7-7-7" />
-                  </svg>
-                </button>
-                {openIndex === index && (
-                  <div className="px-6 pb-4 text-gray-700">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
-            ))}
+                    <span className="text-lg font-bold text-[#009746]">
+                      {faq.question}
+                    </span>
+                    <svg
+                      className={`w-6 h-6 text-[#009746] transform transition-transform ${
+                        openIndex === index ? "rotate-180" : ""
+                      }`}
+                      fill="none"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                  {openIndex === index && (
+                    <div className="px-6 pb-4 text-gray-700">
+                      {faq.answer}
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
 
           {/* Large image on the right */}
-          <div className="hidden lg:flex items-center justify-center">
+          <motion.div 
+            className="hidden lg:flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
             <Image
               src="/9C075D66-6539-4AE4-A2E0-B0AF621D8FE6.png"
               alt="FAQ"
@@ -99,7 +122,7 @@ export default function FAQ() {
               height={600}
               className="object-contain"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

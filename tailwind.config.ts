@@ -13,6 +13,12 @@ const config: Config = {
         'brand-yellow': '#AFCA1F',
         'brand-green': '#009746',
       },
+      fontFamily: {
+        sans: ['WalterTurncoat', 'system-ui', 'sans-serif'],
+      },
+      maxWidth: {
+        '7xl': '1536px',
+      },
     },
   },
   plugins: [],
