@@ -11,9 +11,9 @@ export default function Hero() {
   const y = useTransform(scrollY, [0, 500], [0, -200]);
 
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative h-screen overflow-visible">
       {/* Background Image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 overflow-hidden">
         <Image
           src="/A05AD9BA-404A-414C-99BB-17DC84F67782.png"
           alt="Garten und Landschaftsbau"
@@ -55,8 +55,8 @@ export default function Hero() {
         </div>
       </div>
       
-      {/* Creative green frame at bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-green-800" style={{ clipPath: 'polygon(0% 100%, 0% 0%, 15% 50%, 30% 0%, 45% 50%, 60% 0%, 75% 50%, 90% 0%, 100% 0%, 100% 100%)' }} />
+      {/* Subtle green decorative line below hero - outside the image */}
+      <div className="absolute -bottom-3 left-0 right-0 h-3 bg-green-800/30" />
     </section>
   );
 }

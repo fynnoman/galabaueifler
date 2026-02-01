@@ -39,7 +39,7 @@ export default function Header() {
             <a href="/#faq" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
               FAQ
             </a>
-            <a href="/kontakt" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
+            <a href="/#kontakt" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
               KONTAKT
             </a>
           </div>
@@ -106,7 +106,7 @@ export default function Header() {
               FAQ
             </a>
             <a
-              href="/kontakt"
+              href="/#kontakt"
               className="block text-sm font-medium text-[#009746] hover:text-[#007a38]"
               onClick={() => setMobileMenuOpen(false)}
             >
