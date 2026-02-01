@@ -54,6 +54,9 @@ export default function Hero() {
           in Saarbrücken
         </div>
       </div>
+      
+      {/* Creative green frame at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-green-800" style={{ clipPath: 'polygon(0% 100%, 0% 0%, 15% 50%, 30% 0%, 45% 50%, 60% 0%, 75% 50%, 90% 0%, 100% 0%, 100% 100%)' }} />
     </section>
   );
 }

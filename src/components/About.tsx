@@ -15,7 +15,7 @@ export default function About() {
               </h3>
               <div className="space-y-6 text-lg text-[#009746]/80 leading-relaxed">
                 <p>
-                  Seit über 20 Jahren sind wir Ihr zuverlässiger Partner für 
+                  Seit über 10 Jahren sind wir Ihr zuverlässiger Partner für 
                   Garten- und Landschaftsbau in der Region.
                 </p>
                 <p>

@@ -21,8 +21,8 @@ export default function Contact() {
             
             <div>
               <h3 className="text-3xl font-bold mb-3">TELEFON</h3>
-              <a href="tel:+49123456789" className="hover:opacity-80 text-2xl">
-                +49 (0) 123 456789
+              <a href="tel:+4915901776367" className="hover:opacity-80 text-2xl">
+                +49 1590 1776367
               </a>
             </div>
             
@@ -43,7 +43,7 @@ export default function Contact() {
             
             <div className="pt-4">
               <a 
-                href="tel:+49123456789" 
+                href="tel:+4915901776367" 
                 className="inline-block bg-[#009746] text-white px-10 py-4 text-xl font-bold rounded-lg hover:bg-[#006835] transition-all hover:scale-105"
               >
                 JETZT ANRUFEN
