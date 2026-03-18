@@ -78,14 +78,6 @@ function FAQSchema() {
       },
       {
         "@type": "Question",
-        name: "Bieten Sie auch Winterdienst an?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Ja, wir bieten einen zuverlässigen Winterdienst für Privat- und Geschäftskunden an. Kontaktieren Sie uns für weitere Informationen.",
-        },
-      },
-      {
-        "@type": "Question",
         name: "Wie lange dauert die Umsetzung?",
         acceptedAnswer: {
           "@type": "Answer",
@@ -102,18 +94,10 @@ function FAQSchema() {
       },
       {
         "@type": "Question",
-        name: "Erstellen Sie 3D-Visualisierungen?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Ja, für größere Projekte erstellen wir gerne 3D-Visualisierungen, damit Sie sich vorab ein genaues Bild vom fertigen Garten machen können.",
-        },
-      },
-      {
-        "@type": "Question",
         name: "Arbeiten Sie auch an Wochenenden?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Nach Absprache führen wir auch Arbeiten an Wochenenden durch. Dies ist besonders bei dringenden Projekten oder wenn Sie unter der Woche nicht verfügbar sind möglich.",
+          text: "Samstags sind wir nach Absprache im Einsatz. Sonntags führen wir keine Arbeiten durch.",
         },
       },
       {
@@ -121,15 +105,7 @@ function FAQSchema() {
         name: "Benötige ich eine Baugenehmigung?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Das hängt vom Umfang der Arbeiten ab. Bei größeren Umgestaltungen oder Baumaßnahmen beraten wir Sie gerne zu den rechtlichen Anforderungen und unterstützen bei Behördengängen.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Bieten Sie eine Garantie auf Ihre Arbeiten?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Ja, wir bieten eine Gewährleistung nach gesetzlichen Vorgaben. Zusätzlich stehen wir auch nach Projektabschluss für Fragen und Nachbesserungen zur Verfügung.",
+          text: "Das hängt vom Umfang der Arbeiten ab. Bei größeren Umgestaltungen oder Baumaßnahmen beraten wir Sie gerne zu den rechtlichen Anforderungen.",
         },
       },
       {

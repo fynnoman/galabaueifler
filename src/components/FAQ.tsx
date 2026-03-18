@@ -27,10 +27,6 @@ export default function FAQ() {
       answer: "Nach einer kostenlosen Erstberatung erstellen wir ein individuelles Angebot. Nach Auftragserteilung planen wir gemeinsam mit Ihnen die Details und setzen das Projekt professionell um."
     },
     {
-      question: "Bieten Sie auch Winterdienst an?",
-      answer: "Ja, wir bieten einen zuverlässigen Winterdienst für Privat- und Geschäftskunden an. Kontaktieren Sie uns für weitere Informationen."
-    },
-    {
       question: "Wie lange dauert die Umsetzung?",
       answer: "Die Dauer hängt vom Umfang des Projekts ab. Kleinere Arbeiten können oft innerhalb weniger Tage abgeschlossen werden, größere Projekte benötigen entsprechend mehr Zeit."
     },
@@ -39,20 +35,12 @@ export default function FAQ() {
       answer: "Ja, wir bieten regelmäßige Gartenpflege an. Von der wöchentlichen Rasenpflege bis zur jährlichen Baumpflege - wir kümmern uns um Ihren Garten."
     },
     {
-      question: "Erstellen Sie 3D-Visualisierungen?",
-      answer: "Ja, für größere Projekte erstellen wir gerne 3D-Visualisierungen, damit Sie sich vorab ein genaues Bild vom fertigen Garten machen können."
-    },
-    {
       question: "Arbeiten Sie auch an Wochenenden?",
-      answer: "Nach Absprache führen wir auch Arbeiten an Wochenenden durch. Dies ist besonders bei dringenden Projekten oder wenn Sie unter der Woche nicht verfügbar sind möglich."
+      answer: "Samstags sind wir nach Absprache im Einsatz. Sonntags führen wir keine Arbeiten durch."
     },
     {
       question: "Benötige ich eine Baugenehmigung?",
-      answer: "Das hängt vom Umfang der Arbeiten ab. Bei größeren Umgestaltungen oder Baumaßnahmen beraten wir Sie gerne zu den rechtlichen Anforderungen und unterstützen bei Behördengängen."
-    },
-    {
-      question: "Bieten Sie eine Garantie auf Ihre Arbeiten?",
-      answer: "Ja, wir bieten eine Gewährleistung nach gesetzlichen Vorgaben. Zusätzlich stehen wir auch nach Projektabschluss für Fragen und Nachbesserungen zur Verfügung."
+      answer: "Das hängt vom Umfang der Arbeiten ab. Bei größeren Umgestaltungen oder Baumaßnahmen beraten wir Sie gerne zu den rechtlichen Anforderungen."
     },
     {
       question: "Können Sie auch bestehende Gärten umgestalten?",
@@ -117,11 +105,11 @@ function FAQCard({ faq, index, isOpen, onToggle, isDesktop, scrollYProgress, tot
   scrollYProgress: ReturnType<typeof useScroll>["scrollYProgress"];
   totalFaqs: number;
 }) {
-  const start = index / totalFaqs;
-  const end = (index + 1) / totalFaqs;
+  const start = Math.max(0, index / totalFaqs * 0.4);
+  const end = Math.min(1, start + 0.15);
   
   const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
-  const x = useTransform(scrollYProgress, [start, end], [-100, 0]);
+  const x = useTransform(scrollYProgress, [start, end], [-60, 0]);
 
   const content = (
     <>
