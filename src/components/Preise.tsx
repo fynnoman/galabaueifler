@@ -43,7 +43,7 @@ export default function Preise() {
 
   return (
     <section id="preise" className="py-16 md:py-24 bg-white relative w-full max-w-[1512px] min-h-[600px] lg:min-h-[982px] mx-auto overflow-hidden">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 hidden md:block">
         <Image
           src="/93487AE7-643B-448C-8A28-677484BBA096_1_201_a.jpeg"
           alt="Preise Background"

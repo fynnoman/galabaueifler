@@ -28,7 +28,7 @@ export default function Hero() {
       
       {/* Logo */}
       <motion.div 
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[400px] md:h-[400px] lg:w-[600px] lg:h-[600px]"
+        className="absolute left-4 md:left-8 top-[35%] md:top-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[400px] md:h-[400px] lg:w-[600px] lg:h-[600px]"
         style={{
           scale,
           y,

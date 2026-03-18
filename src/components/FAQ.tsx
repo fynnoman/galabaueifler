@@ -1,12 +1,20 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    const check = () => setIsDesktop(window.innerWidth >= 1024);
+    check();
+    window.addEventListener("resize", check);
+    return () => window.removeEventListener("resize", check);
+  }, []);
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -63,46 +71,17 @@ export default function FAQ() {
           {/* Questions on the left */}
           <div className="space-y-3 md:space-y-4 pl-0">
             {faqs.map((faq, index) => {
-              // Create individual progress for each card based on scroll
-              const start = index / faqs.length;
-              const end = (index + 1) / faqs.length;
-              
-              const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
-              const x = useTransform(scrollYProgress, [start, end], [-100, 0]);
-              
               return (
-                <motion.div
+                <FAQCard
                   key={index}
-                  style={{ opacity, x }}
-                  className="bg-white border-2 border-[#009746] rounded-2xl overflow-hidden"
-                >
-                  <button
-                    onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="w-full px-4 md:px-6 py-3 md:py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-                  >
-                    <span className="text-base md:text-lg font-bold text-[#009746] pr-2">
-                      {faq.question}
-                    </span>
-                    <svg
-                      className={`w-5 h-5 md:w-6 md:h-6 text-[#009746] transform transition-transform flex-shrink-0 ${
-                        openIndex === index ? "rotate-180" : ""
-                      }`}
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </button>
-                  {openIndex === index && (
-                    <div className="px-4 md:px-6 pb-4 text-sm md:text-base text-gray-700">
-                      {faq.answer}
-                    </div>
-                  )}
-                </motion.div>
+                  faq={faq}
+                  index={index}
+                  isOpen={openIndex === index}
+                  onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+                  isDesktop={isDesktop}
+                  scrollYProgress={scrollYProgress}
+                  totalFaqs={faqs.length}
+                />
               );
             })}
           </div>
@@ -126,5 +105,69 @@ export default function FAQ() {
         </div>
       </div>
     </section>
+  );
+}
+
+function FAQCard({ faq, index, isOpen, onToggle, isDesktop, scrollYProgress, totalFaqs }: {
+  faq: { question: string; answer: string };
+  index: number;
+  isOpen: boolean;
+  onToggle: () => void;
+  isDesktop: boolean;
+  scrollYProgress: ReturnType<typeof useScroll>["scrollYProgress"];
+  totalFaqs: number;
+}) {
+  const start = index / totalFaqs;
+  const end = (index + 1) / totalFaqs;
+  
+  const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
+  const x = useTransform(scrollYProgress, [start, end], [-100, 0]);
+
+  const content = (
+    <>
+      <button
+        onClick={onToggle}
+        className="w-full px-4 md:px-6 py-3 md:py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+      >
+        <span className="text-base md:text-lg font-bold text-[#009746] pr-2">
+          {faq.question}
+        </span>
+        <svg
+          className={`w-5 h-5 md:w-6 md:h-6 text-[#009746] transform transition-transform flex-shrink-0 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      {isOpen && (
+        <div className="px-4 md:px-6 pb-4 text-sm md:text-base text-gray-700">
+          {faq.answer}
+        </div>
+      )}
+    </>
+  );
+
+  if (isDesktop) {
+    return (
+      <motion.div
+        style={{ opacity, x }}
+        className="bg-white border-2 border-[#009746] rounded-2xl overflow-hidden"
+      >
+        {content}
+      </motion.div>
+    );
+  }
+
+  return (
+    <div className="bg-white border-2 border-[#009746] rounded-2xl overflow-hidden">
+      {content}
+    </div>
   );
 }

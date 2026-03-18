@@ -12,7 +12,7 @@ export default function Gallery() {
 
   return (
     <section id="galerie" className="py-16 md:py-24 relative w-full max-w-[1512px] min-h-[600px] lg:min-h-[982px] mx-auto overflow-hidden">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 hidden md:block">
         <Image
           src="/C69E0D59-E346-4D8C-B36B-F4922BDFC02E_1_201_a.jpeg"
           alt="Referenzen Background"
