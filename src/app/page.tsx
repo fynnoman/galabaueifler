@@ -3,7 +3,8 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import About from "@/components/About";
 import Gallery from "@/components/Gallery";
-import Preise from "@/components/Preise";
+import BeforeAfter from "@/components/BeforeAfter";
+import Qualitaet from "@/components/Qualitaet";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -18,7 +19,7 @@ function LocalBusinessSchema() {
       "Professioneller Garten- und Landschaftsbau in Saarbrücken. Gartengestaltung, Pflasterarbeiten, Baumpflege und mehr.",
     url: "https://gala-bauer.de",
     telephone: "+4915901776367",
-    email: "info@gala-bauer.de",
+    email: "galabau-eifler@gmx.de",
     image: "https://gala-bauer.de/A05AD9BA-404A-414C-99BB-17DC84F67782.png",
     logo: "https://gala-bauer.de/F596091D-F9EA-4E77-8A3E-B0D535C72828.png",
     address: {
@@ -37,7 +38,7 @@ function LocalBusinessSchema() {
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "07:00",
+        opens: "08:00",
         closes: "17:00",
       },
       {
@@ -165,7 +166,8 @@ export default function Home() {
           <Services />
           <About />
           <Gallery />
-          <Preise />
+          <BeforeAfter />
+          <Qualitaet />
           <FAQ />
           <Contact />
         </main>

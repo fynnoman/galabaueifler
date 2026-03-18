@@ -4,7 +4,7 @@ export default function Gallery() {
   const images = [
     { src: "/A3A87027-B286-43A9-8B83-CF8B100B4477_1_105_c.jpeg", alt: "Gartengestaltung mit Pflasterarbeiten und Bepflanzung" },
     { src: "/26C2764C-810A-42F3-8AC0-530A26973299_1_105_c.jpeg", alt: "Neuanlage einer Rasenfläche mit Beetgestaltung" },
-    { src: "/3BAF90DD-E8D5-45E1-B15A-F3CD36A9F32F_1_105_c.jpeg", alt: "Professionelle Gartenpflege und Heckenschnitt" },
+    { src: "/AA2B7DD7-BBA1-48E6-8524-9C080D345CE2_1_105_c.jpeg", alt: "Professionelle Gartenpflege und Heckenschnitt" },
     { src: "/26EAA02B-5C07-4E25-8867-D20BCFF5AD20_1_105_c.jpeg", alt: "Terrassen- und Wegebau aus Naturstein" },
     { src: "/F9AB677B-405D-4753-85E1-06C67DFB3A2F_1_105_c.jpeg", alt: "Einfahrt neu gepflastert mit modernem Design" },
     { src: "/F56A73C4-F91B-4963-A869-9F38B18F443E_1_105_c.jpeg", alt: "Komplette Gartenumgestaltung mit Rollrasen" },

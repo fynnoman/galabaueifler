@@ -81,10 +81,10 @@ export default function DatenschutzPage() {
                 <p>
                   E-Mail:{" "}
                   <a
-                    href="mailto:info@gala-bauer.de"
+                    href="mailto:galabau-eifler@gmx.de"
                     className="text-[#009746] hover:underline"
                   >
-                    info@gala-bauer.de
+                    galabau-eifler@gmx.de
                   </a>
                 </p>
               </div>

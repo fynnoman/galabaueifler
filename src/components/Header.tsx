@@ -33,8 +33,8 @@ export default function Header() {
             <a href="/#galerie" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
               GALERIE
             </a>
-            <a href="/#preise" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
-              PREISE
+            <a href="/#qualitaet" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
+              QUALITÄT
             </a>
             <a href="/#faq" className="text-sm font-medium text-[#009746] hover:text-[#007a38]">
               FAQ
@@ -94,11 +94,11 @@ export default function Header() {
               GALERIE
             </a>
             <a
-              href="/#preise"
+              href="/#qualitaet"
               className="block text-base font-medium text-[#009746] hover:text-[#007a38] py-1"
               onClick={() => setMobileMenuOpen(false)}
             >
-              PREISE
+              QUALITÄT
             </a>
             <a
               href="/#faq"

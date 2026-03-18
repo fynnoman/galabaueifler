@@ -28,15 +28,15 @@ export default function Contact() {
             
             <div>
               <h3 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3">E-MAIL</h3>
-              <a href="mailto:info@gala-bauer.de" className="hover:opacity-80 text-lg md:text-2xl">
-                info@gala-bauer.de
+              <a href="mailto:galabau-eifler@gmx.de" className="hover:opacity-80 text-lg md:text-2xl">
+                galabau-eifler@gmx.de
               </a>
             </div>
             
             <div>
               <h3 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3">ÖFFNUNGSZEITEN</h3>
               <div className="space-y-1 text-lg md:text-2xl">
-                <p>Montag - Freitag: 7:00 - 17:00 Uhr</p>
+                <p>Montag - Freitag: 8:00 - 17:00 Uhr</p>
                 <p>Samstag: 8:00 - 13:00 Uhr</p>
               </div>
             </div>

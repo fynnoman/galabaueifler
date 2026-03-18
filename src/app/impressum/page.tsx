@@ -56,10 +56,10 @@ export default function ImpressumPage() {
                 <br />
                 E-Mail:{" "}
                 <a
-                  href="mailto:info@gala-bauer.de"
+                  href="mailto:galabau-eifler@gmx.de"
                   className="text-[#009746] hover:underline"
                 >
-                  info@gala-bauer.de
+                  galabau-eifler@gmx.de
                 </a>
               </p>
             </section>
