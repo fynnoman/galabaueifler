@@ -2,49 +2,49 @@
 
 export default function Contact() {
   return (
-    <section id="kontakt" className="py-24 bg-white text-[#009746]">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <h2 className="text-4xl lg:text-6xl font-bold mb-16 text-center">
+    <section id="kontakt" className="py-16 md:py-24 bg-white text-[#009746]">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
+        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 md:mb-16 text-center">
           KONTAKT
         </h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
           {/* Contact Info */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             <div>
-              <h3 className="text-3xl font-bold mb-3">GALA BAUER GMBH</h3>
-              <div className="space-y-1 text-2xl">
+              <h3 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3">GALA BAUER GMBH</h3>
+              <div className="space-y-1 text-lg md:text-2xl">
                 <p>Rastbachweg 13</p>
                 <p>66113 Saarbrücken</p>
               </div>
             </div>
             
             <div>
-              <h3 className="text-3xl font-bold mb-3">TELEFON</h3>
-              <a href="tel:+4915901776367" className="hover:opacity-80 text-2xl">
+              <h3 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3">TELEFON</h3>
+              <a href="tel:+4915901776367" className="hover:opacity-80 text-lg md:text-2xl">
                 +49 1590 1776367
               </a>
             </div>
             
             <div>
-              <h3 className="text-3xl font-bold mb-3">E-MAIL</h3>
-              <a href="mailto:info@gala-bauer.de" className="hover:opacity-80 text-2xl">
+              <h3 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3">E-MAIL</h3>
+              <a href="mailto:info@gala-bauer.de" className="hover:opacity-80 text-lg md:text-2xl">
                 info@gala-bauer.de
               </a>
             </div>
             
             <div>
-              <h3 className="text-3xl font-bold mb-3">ÖFFNUNGSZEITEN</h3>
-              <div className="space-y-1 text-2xl">
+              <h3 className="text-2xl md:text-3xl font-bold mb-2 md:mb-3">ÖFFNUNGSZEITEN</h3>
+              <div className="space-y-1 text-lg md:text-2xl">
                 <p>Montag - Freitag: 7:00 - 17:00 Uhr</p>
                 <p>Samstag: 8:00 - 13:00 Uhr</p>
               </div>
             </div>
             
-            <div className="pt-4">
+            <div className="pt-2 md:pt-4">
               <a 
                 href="tel:+4915901776367" 
-                className="inline-block bg-[#009746] text-white px-10 py-4 text-xl font-bold rounded-lg hover:bg-[#006835] transition-all hover:scale-105"
+                className="inline-block bg-[#009746] text-white px-8 md:px-10 py-3 md:py-4 text-lg md:text-xl font-bold rounded-lg hover:bg-[#006835] transition-all hover:scale-105"
               >
                 JETZT ANRUFEN
               </a>

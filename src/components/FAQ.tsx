@@ -53,15 +53,15 @@ export default function FAQ() {
   ];
 
   return (
-    <section id="faq" className="py-24 bg-[#009746]/10" ref={containerRef}>
-      <div className="mx-auto max-w-7xl pr-6 lg:pr-8">
-        <h2 className="text-4xl lg:text-6xl font-bold mb-16 text-[#009746] text-center px-6 lg:px-8">
+    <section id="faq" className="py-16 md:py-24 bg-[#009746]/10" ref={containerRef}>
+      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-0 lg:pr-8">
+        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 md:mb-16 text-[#009746] text-center px-0 lg:px-8">
           HÄUFIGE FRAGEN
         </h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
           {/* Questions on the left */}
-          <div className="space-y-4 pl-0">
+          <div className="space-y-3 md:space-y-4 pl-0">
             {faqs.map((faq, index) => {
               // Create individual progress for each card based on scroll
               const start = index / faqs.length;
@@ -78,13 +78,13 @@ export default function FAQ() {
                 >
                   <button
                     onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                    className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                    className="w-full px-4 md:px-6 py-3 md:py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                   >
-                    <span className="text-lg font-bold text-[#009746]">
+                    <span className="text-base md:text-lg font-bold text-[#009746] pr-2">
                       {faq.question}
                     </span>
                     <svg
-                      className={`w-6 h-6 text-[#009746] transform transition-transform ${
+                      className={`w-5 h-5 md:w-6 md:h-6 text-[#009746] transform transition-transform flex-shrink-0 ${
                         openIndex === index ? "rotate-180" : ""
                       }`}
                       fill="none"
@@ -98,7 +98,7 @@ export default function FAQ() {
                     </svg>
                   </button>
                   {openIndex === index && (
-                    <div className="px-6 pb-4 text-gray-700">
+                    <div className="px-4 md:px-6 pb-4 text-sm md:text-base text-gray-700">
                       {faq.answer}
                     </div>
                   )}

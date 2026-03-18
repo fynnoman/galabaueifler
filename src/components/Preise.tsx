@@ -42,7 +42,7 @@ export default function Preise() {
   ];
 
   return (
-    <section id="preise" className="py-24 bg-white relative w-[1512px] h-[982px] mx-auto overflow-hidden">
+    <section id="preise" className="py-16 md:py-24 bg-white relative w-full max-w-[1512px] min-h-[600px] lg:min-h-[982px] mx-auto overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
           src="/93487AE7-643B-448C-8A28-677484BBA096_1_201_a.jpeg"
@@ -51,16 +51,16 @@ export default function Preise() {
           className="object-cover opacity-[0.82]"
         />
       </div>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10">
-        <h2 className="text-4xl lg:text-6xl font-bold mb-16 text-[#009746] text-center">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8 relative z-10">
+        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 md:mb-16 text-[#009746] text-center">
           PREISE
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {pricePackages.map((pkg, index) => (
             <div
               key={index}
-              className="border-l-4 border-[#009746] bg-white/30 backdrop-blur-md p-8 rounded-2xl"
+              className="border-l-4 border-[#009746] bg-white/30 backdrop-blur-md p-5 md:p-8 rounded-2xl"
             >
               <h3 className="text-2xl font-bold mb-2 text-[#009746]">
                 {pkg.title}

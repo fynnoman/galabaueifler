@@ -40,10 +40,10 @@ export default function Services() {
   ];
 
   return (
-    <section id="leistungen" className="py-24 bg-white">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="leistungen" className="py-16 md:py-24 bg-white">
+      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <motion.h2 
-          className="text-4xl lg:text-6xl font-bold text-[#009746] mb-16 text-center"
+          className="text-3xl md:text-4xl lg:text-6xl font-bold text-[#009746] mb-8 md:mb-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -61,7 +61,7 @@ export default function Services() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p className="text-2xl lg:text-3xl text-[#009746] leading-relaxed">
+            <p className="text-lg md:text-2xl lg:text-3xl text-[#009746] leading-relaxed">
               Unsere Arbeiten im Garten- und Landschaftsbau entstehen mit Sorgfalt, Erfahrung und echter Hingabe. Von der Planung bis zur Umsetzung achten wir auf jedes Detail, arbeiten präzise und zuverlässig und schaffen Außenanlagen, an denen unsere Kunden langfristig Freude finden.
             </p>
             
@@ -84,7 +84,7 @@ export default function Services() {
 
           {/* Right side - Stacked Cards */}
           <motion.div 
-            className="relative h-[500px]"
+            className="relative h-[350px] md:h-[450px] lg:h-[500px]"
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -99,18 +99,18 @@ export default function Services() {
                     : 'opacity-0 translate-y-8 pointer-events-none'
                 }`}
               >
-                <div className="bg-green-800 p-10 rounded-2xl text-white h-full flex flex-col justify-between">
+                <div className="bg-green-800 p-6 md:p-10 rounded-2xl text-white h-full flex flex-col justify-between">
                   <div>
-                    <h3 className="text-4xl font-bold mb-4 border-b-4 border-white pb-4">
+                    <h3 className="text-2xl md:text-4xl font-bold mb-4 border-b-4 border-white pb-4">
                       {group.title}
                     </h3>
-                    <p className="text-white/90 mb-8 text-xl">
+                    <p className="text-white/90 mb-6 md:mb-8 text-base md:text-xl">
                       {group.description}
                     </p>
-                    <ul className="space-y-4">
+                    <ul className="space-y-3 md:space-y-4">
                       {group.services.map((service, idx) => (
-                        <li key={idx} className="flex items-center text-xl">
-                          <span className="mr-4 text-3xl">•</span>
+                        <li key={idx} className="flex items-center text-base md:text-xl">
+                          <span className="mr-3 md:mr-4 text-2xl md:text-3xl">•</span>
                           {service}
                         </li>
                       ))}

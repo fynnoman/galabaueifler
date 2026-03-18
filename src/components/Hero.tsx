@@ -24,11 +24,11 @@ export default function Hero() {
       </div>
       
       {/* White gradient overlay at top */}
-      <div className="absolute top-0 left-0 right-0 h-64 bg-gradient-to-b from-white to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-32 md:h-64 bg-gradient-to-b from-white to-transparent" />
       
       {/* Logo */}
       <motion.div 
-        className="absolute left-8 top-1/2 -translate-y-1/2 w-[600px] h-[600px]"
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-[250px] h-[250px] md:w-[400px] md:h-[400px] lg:w-[600px] lg:h-[600px]"
         style={{
           scale,
           y,
@@ -43,14 +43,14 @@ export default function Hero() {
       </motion.div>
       
       {/* Dark green stripes on the right */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-12 items-end">
-        <div className="w-[700px] h-12 bg-green-800 flex items-center justify-start pl-16 text-white font-bold text-xl" style={{ clipPath: 'polygon(0% 0, 100% 0, 100% 100%, 10% 100%)' }}>
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 md:gap-8 lg:gap-12 items-end">
+        <div className="w-[220px] md:w-[450px] lg:w-[700px] h-8 md:h-10 lg:h-12 bg-green-800 flex items-center justify-start pl-8 md:pl-12 lg:pl-16 text-white font-bold text-xs md:text-base lg:text-xl" style={{ clipPath: 'polygon(0% 0, 100% 0, 100% 100%, 10% 100%)' }}>
           Ihr Ansprechpartner
         </div>
-        <div className="w-[600px] h-12 bg-green-800 flex items-center justify-start pl-16 text-white font-bold text-xl" style={{ clipPath: 'polygon(0% 0, 100% 0, 100% 100%, 10% 100%)' }}>
+        <div className="w-[190px] md:w-[380px] lg:w-[600px] h-8 md:h-10 lg:h-12 bg-green-800 flex items-center justify-start pl-8 md:pl-12 lg:pl-16 text-white font-bold text-xs md:text-base lg:text-xl" style={{ clipPath: 'polygon(0% 0, 100% 0, 100% 100%, 10% 100%)' }}>
           für Garten- & Landschaftsbau
         </div>
-        <div className="w-[500px] h-12 bg-green-800 flex items-center justify-start pl-16 text-white font-bold text-xl" style={{ clipPath: 'polygon(0% 0, 100% 0, 100% 100%, 10% 100%)' }}>
+        <div className="w-[160px] md:w-[320px] lg:w-[500px] h-8 md:h-10 lg:h-12 bg-green-800 flex items-center justify-start pl-8 md:pl-12 lg:pl-16 text-white font-bold text-xs md:text-base lg:text-xl" style={{ clipPath: 'polygon(0% 0, 100% 0, 100% 100%, 10% 100%)' }}>
           in Saarbrücken
         </div>
       </div>
