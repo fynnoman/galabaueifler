@@ -2,13 +2,13 @@
 
 export default function Contact() {
   return (
-    <section id="kontakt" className="py-16 md:py-24 bg-white text-[#009746]">
+    <section id="kontakt" className="py-16 md:py-24 bg-white text-[#009746]" aria-label="Kontakt">
       <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
         <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 md:mb-16 text-center">
           KONTAKT
         </h2>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
+        <address className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 not-italic">
           {/* Contact Info */}
           <div className="space-y-6 md:space-y-8">
             <div>
@@ -73,7 +73,7 @@ export default function Contact() {
               IN GOOGLE MAPS ÖFFNEN
             </a>
           </div>
-        </div>
+        </address>
       </div>
     </section>
   );

@@ -96,7 +96,7 @@ export default function FAQ() {
           >
             <Image
               src="/9C075D66-6539-4AE4-A2E0-B0AF621D8FE6.png"
-              alt="FAQ"
+              alt="Illustration häufig gestellter Fragen zur Gartengestaltung"
               width={600}
               height={600}
               className="object-contain"

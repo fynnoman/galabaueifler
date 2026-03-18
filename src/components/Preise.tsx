@@ -102,7 +102,7 @@ export default function Preise() {
             Alle Preise verstehen sich zzgl. MwSt. Gerne erstellen wir Ihnen ein individuelles Angebot.
           </p>
           <a
-            href="/kontakt"
+            href="/#kontakt"
             className="inline-block bg-[#AFCA1F] text-[#009746] px-8 py-4 text-sm font-bold hover:bg-[#9db51b] transition-colors"
           >
             JETZT ANFRAGEN

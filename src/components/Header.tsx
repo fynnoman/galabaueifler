@@ -8,13 +8,13 @@ export default function Header() {
 
   return (
     <header className="absolute top-0 left-0 right-0 z-10">
-      <nav className="mx-auto max-w-7xl px-4 py-4 md:px-6 md:py-8 lg:px-8 lg:py-12">
+      <nav className="mx-auto max-w-7xl px-4 py-4 md:px-6 md:py-8 lg:px-8 lg:py-12" aria-label="Hauptnavigation">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <Image
                 src="/F596091D-F9EA-4E77-8A3E-B0D535C72828.png"
-                alt="GALA BAUER Logo"
+                alt="Galabau Eifler Logo"
                 width={80}
                 height={80}
                 className="object-cover w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20"
@@ -48,6 +48,8 @@ export default function Header() {
           <button
             className="md:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Menü schließen" : "Menü öffnen"}
+            aria-expanded={mobileMenuOpen}
           >
             <svg
               className="h-6 w-6"

@@ -16,7 +16,7 @@ export default function Hero() {
       <div className="absolute inset-0 overflow-hidden">
         <Image
           src="/A05AD9BA-404A-414C-99BB-17DC84F67782.png"
-          alt="Garten und Landschaftsbau"
+          alt="Professionell gestalteter Garten mit Rasen und Bepflanzung – Galabau Eifler Saarbrücken"
           fill
           className="object-cover"
           priority
@@ -36,7 +36,7 @@ export default function Hero() {
       >
         <Image
           src="/F596091D-F9EA-4E77-8A3E-B0D535C72828.png"
-          alt="Logo"
+          alt="Galabau Eifler Logo – Garten- und Landschaftsbau Saarbrücken"
           fill
           className="object-contain"
         />

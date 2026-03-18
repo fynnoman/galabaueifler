@@ -40,7 +40,7 @@ export default function About() {
           >
             <Image
               src="/3BAF90DD-E8D5-45E1-B15A-F3CD36A9F32F_1_105_c.jpeg"
-              alt="Galabau Eifler Arbeit"
+              alt="Galabau Eifler Team bei der Gartenarbeit in Saarbrücken"
               fill
               className="object-cover"
             />
@@ -54,7 +54,7 @@ export default function About() {
           >
             <Image
               src="/3BAF90DD-E8D5-45E1-B15A-F3CD36A9F32F_1_105_c.jpeg"
-              alt="Galabau Eifler Arbeit"
+              alt="Galabau Eifler Team bei der Gartenarbeit in Saarbrücken"
               fill
               className="object-cover"
             />
