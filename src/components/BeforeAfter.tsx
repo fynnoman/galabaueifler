@@ -134,12 +134,12 @@ function BeforeAfterSlider({ before, after, label }: BeforeAfterPair) {
 export default function BeforeAfter() {
   const pairs: BeforeAfterPair[] = [
     {
-      before: "/vorher.jpeg",
+      before: "/8A65735B-79DC-4CD0-8881-013B561327A5_1_105_c.jpeg",
       after: "/nachher1.jpeg",
       label: "Gartenumgestaltung",
     },
     {
-      before: "/vorher2.jpeg",
+      before: "/8B362254-C4D7-4F7E-BC60-907C4E302F64_1_105_c.jpeg",
       after: "/nachher2.jpeg",
       label: "Pflasterarbeiten",
     },
