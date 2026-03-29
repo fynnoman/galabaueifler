@@ -13,15 +13,15 @@ function LocalBusinessSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://gala-bauer.de/#business",
+    "@id": "https://www.galabaueifler.de/#business",
     name: "Galabau Eifler GmbH",
     description:
       "Professioneller Garten- und Landschaftsbau in Saarbrücken. Gartengestaltung, Pflasterarbeiten, Baumpflege und mehr.",
-    url: "https://gala-bauer.de",
+    url: "https://www.galabaueifler.de",
     telephone: "+4915901776367",
     email: "galabau-eifler@gmx.de",
-    image: "https://gala-bauer.de/A05AD9BA-404A-414C-99BB-17DC84F67782.png",
-    logo: "https://gala-bauer.de/F596091D-F9EA-4E77-8A3E-B0D535C72828.png",
+    image: "https://www.galabaueifler.de/A05AD9BA-404A-414C-99BB-17DC84F67782.png",
+    logo: "https://www.galabaueifler.de/F596091D-F9EA-4E77-8A3E-B0D535C72828.png",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Rastbachweg 13",
@@ -137,7 +137,7 @@ function BreadcrumbSchema() {
         "@type": "ListItem",
         position: 1,
         name: "Startseite",
-        item: "https://gala-bauer.de",
+        item: "https://www.galabaueifler.de",
       },
     ],
   };
@@ -160,7 +160,7 @@ export default function Home() {
         <Header />
         <main id="main-content">
           <h1 className="sr-only">
-            Galabau Eifler – Garten- und Landschaftsbau in Saarbrücken
+            Galabau Eifler – Professioneller Garten- und Landschaftsbau in Saarbrücken
           </h1>
           <Hero />
           <Services />

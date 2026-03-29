@@ -3,11 +3,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Galabau Eifler – Garten- & Landschaftsbau Saarbrücken",
+    default: "Galabau Eifler – Professioneller Garten- & Landschaftsbau in Saarbrücken",
     template: "%s | Galabau Eifler",
   },
   description:
-    "Galabau Eifler – Ihr Partner für Garten- und Landschaftsbau in Saarbrücken. Gartengestaltung, Pflasterarbeiten, Baumpflege & mehr. Jetzt beraten lassen!",
+    "Galabau Eifler – Ihr professioneller Partner für Garten- und Landschaftsbau in Saarbrücken. Gartengestaltung, Pflasterarbeiten, Baumpflege & mehr. Jetzt beraten lassen!",
   keywords: [
     "Garten- und Landschaftsbau Saarbrücken",
     "Galabau Saarbrücken",
@@ -20,15 +20,18 @@ export const metadata: Metadata = {
     "Rollrasen",
   ],
   authors: [{ name: "Galabau Eifler GmbH" }],
+  verification: {
+    google: "googleb3500a0ecacad6bc",
+  },
   robots: { index: true, follow: true },
-  metadataBase: new URL("https://gala-bauer.de"),
+  metadataBase: new URL("https://www.galabaueifler.de"),
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: "https://gala-bauer.de",
+    url: "https://www.galabaueifler.de",
     siteName: "Galabau Eifler",
-    title: "Galabau Eifler – Garten- & Landschaftsbau Saarbrücken",
+    title: "Galabau Eifler – Professioneller Garten- & Landschaftsbau Saarbrücken",
     description:
       "Professioneller Garten- und Landschaftsbau in Saarbrücken. Planung, Gestaltung & Pflege aus einer Hand. Jetzt anfragen!",
     images: [
@@ -42,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Galabau Eifler – Garten- & Landschaftsbau Saarbrücken",
+    title: "Galabau Eifler – Professioneller Garten- & Landschaftsbau Saarbrücken",
     description:
       "Professioneller Garten- und Landschaftsbau in Saarbrücken. Jetzt beraten lassen!",
     images: ["/A05AD9BA-404A-414C-99BB-17DC84F67782.png"],

@@ -45,7 +45,7 @@ export default function Hero() {
       {/* Dark green stripes on the right */}
       <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-4 md:gap-8 lg:gap-12 items-end">
         <div className="w-[220px] md:w-[450px] lg:w-[700px] h-8 md:h-10 lg:h-12 bg-green-800 flex items-center justify-start pl-8 md:pl-12 lg:pl-16 text-white font-bold text-xs md:text-base lg:text-xl" style={{ clipPath: 'polygon(0% 0, 100% 0, 100% 100%, 10% 100%)' }}>
-          Ihr Ansprechpartner
+          Professioneller GalaBau
         </div>
         <div className="w-[190px] md:w-[380px] lg:w-[600px] h-8 md:h-10 lg:h-12 bg-green-800 flex items-center justify-start pl-8 md:pl-12 lg:pl-16 text-white font-bold text-xs md:text-base lg:text-xl" style={{ clipPath: 'polygon(0% 0, 100% 0, 100% 100%, 10% 100%)' }}>
           für Garten- & Landschaftsbau
