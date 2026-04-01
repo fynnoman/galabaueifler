@@ -38,4 +38,7 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# anfragen data
+/data/anfragen.json
 next-env.d.ts

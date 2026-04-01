@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 // Login-Daten für den Kunden
 const ADMIN_USER = "eifler";
@@ -10,38 +10,11 @@ interface Anfrage {
   id: number;
   name: string;
   email: string;
+  telefon: string;
   nachricht: string;
   datum: string;
   gelesen: boolean;
 }
-
-// Demo-Anfragen damit der Bereich nicht leer aussieht
-const demoAnfragen: Anfrage[] = [
-  {
-    id: 1,
-    name: "Thomas Müller",
-    email: "t.mueller@email.de",
-    nachricht: "Guten Tag, ich hätte gerne ein Angebot für die Neugestaltung meines Vorgartens. Ca. 50qm.",
-    datum: "28.03.2026",
-    gelesen: true,
-  },
-  {
-    id: 2,
-    name: "Sandra Weber",
-    email: "s.weber@email.de",
-    nachricht: "Wir suchen jemanden für regelmäßige Gartenpflege. Können Sie uns ein Angebot machen?",
-    datum: "29.03.2026",
-    gelesen: false,
-  },
-  {
-    id: 3,
-    name: "Klaus Hoffmann",
-    email: "k.hoffmann@email.de",
-    nachricht: "Brauche dringend Hilfe mit Pflasterarbeiten für meine Einfahrt. Bitte um Rückruf.",
-    datum: "30.03.2026",
-    gelesen: false,
-  },
-];
 
 function LoginScreen({ onLogin }: { onLogin: () => void }) {
   const [user, setUser] = useState("");
@@ -115,16 +88,54 @@ function StatCard({ label, value, color }: { label: string; value: string; color
 }
 
 function Dashboard() {
-  const [anfragen, setAnfragen] = useState<Anfrage[]>(demoAnfragen);
+  const [anfragen, setAnfragen] = useState<Anfrage[]>([]);
   const [activeTab, setActiveTab] = useState<"dashboard" | "anfragen" | "infos" | "hilfe">("dashboard");
   const [showAnfrageDetail, setShowAnfrageDetail] = useState<Anfrage | null>(null);
+  const [loading, setLoading] = useState(true);
+
+  const fetchAnfragen = useCallback(async () => {
+    try {
+      const res = await fetch("/api/anfragen?auth=galabau2026");
+      if (res.ok) {
+        const data = await res.json();
+        setAnfragen(data);
+      }
+    } catch (err) {
+      console.error("Fehler beim Laden der Anfragen:", err);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    fetchAnfragen();
+    // Auto-Refresh alle 30 Sekunden
+    const interval = setInterval(fetchAnfragen, 30000);
+    return () => clearInterval(interval);
+  }, [fetchAnfragen]);
 
   const ungelesen = anfragen.filter((a) => !a.gelesen).length;
 
-  const markAsRead = (id: number) => {
+  const markAsRead = async (id: number) => {
     setAnfragen((prev) =>
       prev.map((a) => (a.id === id ? { ...a, gelesen: true } : a))
     );
+    await fetch("/api/anfragen", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, auth: "galabau2026" }),
+    });
+  };
+
+  const deleteAnfrage = async (id: number) => {
+    if (!confirm("Anfrage wirklich löschen?")) return;
+    await fetch("/api/anfragen", {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id, auth: "galabau2026" }),
+    });
+    setAnfragen((prev) => prev.filter((a) => a.id !== id));
+    setShowAnfrageDetail(null);
   };
 
   const handleLogout = () => {
@@ -202,7 +213,12 @@ function Dashboard() {
             <div className="bg-white rounded-2xl p-6">
               <h3 className="font-bold text-neutral-900 mb-4">Letzte Anfragen</h3>
               <div className="space-y-3">
-                {anfragen.slice(0, 3).map((a) => (
+                {loading ? (
+                  <p className="text-neutral-400 text-sm py-4 text-center">Anfragen werden geladen...</p>
+                ) : anfragen.length === 0 ? (
+                  <p className="text-neutral-400 text-sm py-4 text-center">Noch keine Anfragen eingegangen.</p>
+                ) : (
+                  anfragen.slice(0, 3).map((a) => (
                   <div
                     key={a.id}
                     className={`flex items-center justify-between p-4 rounded-xl cursor-pointer transition-colors ${
@@ -221,7 +237,8 @@ function Dashboard() {
                     </div>
                     <span className="text-xs text-neutral-400 whitespace-nowrap ml-4">{a.datum}</span>
                   </div>
-                ))}
+                ))
+                )}
               </div>
             </div>
 
@@ -282,7 +299,17 @@ function Dashboard() {
             <p className="text-neutral-500 mb-6">
               Hier sehen Sie alle Anfragen, die über Ihre Website eingegangen sind.
             </p>
-            {anfragen.map((a) => (
+            {loading ? (
+              <div className="bg-white rounded-2xl p-8 text-center">
+                <p className="text-neutral-400">Anfragen werden geladen...</p>
+              </div>
+            ) : anfragen.length === 0 ? (
+              <div className="bg-white rounded-2xl p-8 text-center">
+                <p className="text-neutral-400 text-lg">📭 Noch keine Anfragen eingegangen.</p>
+                <p className="text-neutral-400 text-sm mt-2">Sobald jemand das Kontaktformular auf Ihrer Website ausfüllt, erscheinen die Anfragen hier.</p>
+              </div>
+            ) : (
+            anfragen.map((a) => (
               <div
                 key={a.id}
                 className={`bg-white rounded-2xl p-6 cursor-pointer transition-all hover:ring-2 hover:ring-[#009746]/30 ${
@@ -306,7 +333,8 @@ function Dashboard() {
                   <span className="text-sm text-neutral-400 whitespace-nowrap">{a.datum}</span>
                 </div>
               </div>
-            ))}
+            ))
+            )}
           </div>
         )}
 
@@ -329,25 +357,38 @@ function Dashboard() {
                   >
                     {showAnfrageDetail.email}
                   </a>
+                  {showAnfrageDetail.telefon && (
+                    <p className="text-neutral-500 text-sm mt-1">
+                      Tel: {showAnfrageDetail.telefon}
+                    </p>
+                  )}
                 </div>
                 <span className="text-sm text-neutral-400">{showAnfrageDetail.datum}</span>
               </div>
               <div className="bg-neutral-50 rounded-xl p-6">
                 <p className="text-neutral-700 leading-relaxed">{showAnfrageDetail.nachricht}</p>
               </div>
-              <div className="mt-6 flex gap-3">
+              <div className="mt-6 flex gap-3 flex-wrap">
                 <a
                   href={`mailto:${showAnfrageDetail.email}?subject=Ihre Anfrage bei Galabau Eifler`}
                   className="bg-[#009746] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#007a38] transition-colors"
                 >
                   Per E-Mail antworten
                 </a>
-                <a
-                  href={`tel:${showAnfrageDetail.email}`}
-                  className="bg-neutral-100 text-neutral-700 px-6 py-3 rounded-lg font-medium hover:bg-neutral-200 transition-colors"
+                {showAnfrageDetail.telefon && (
+                  <a
+                    href={`tel:${showAnfrageDetail.telefon}`}
+                    className="bg-neutral-100 text-neutral-700 px-6 py-3 rounded-lg font-medium hover:bg-neutral-200 transition-colors"
+                  >
+                    Anrufen
+                  </a>
+                )}
+                <button
+                  onClick={() => deleteAnfrage(showAnfrageDetail.id)}
+                  className="bg-red-50 text-red-600 px-6 py-3 rounded-lg font-medium hover:bg-red-100 transition-colors ml-auto"
                 >
-                  Anrufen
-                </a>
+                  Löschen
+                </button>
               </div>
             </div>
           </div>
