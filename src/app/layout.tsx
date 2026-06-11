@@ -1,5 +1,27 @@
 import type { Metadata } from "next";
+import { Fraunces, EB_Garamond, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  axes: ["opsz", "SOFT", "WONK"],
+});
+
+const garamond = EB_Garamond({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+  style: ["normal", "italic"],
+});
+
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -58,11 +80,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="de">
+    <html lang="de" className={`${fraunces.variable} ${garamond.variable} ${mono.variable}`}>
       <body className="antialiased">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:px-4 focus:py-2 focus:text-[#009746] focus:font-bold focus:rounded"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-[var(--paper)] focus:px-4 focus:py-2 focus:text-[var(--moss)] focus:font-bold focus:rounded"
         >
           Zum Inhalt springen
         </a>

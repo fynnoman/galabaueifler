@@ -156,7 +156,7 @@ export default function Home() {
       <LocalBusinessSchema />
       <FAQSchema />
       <BreadcrumbSchema />
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen bg-[var(--paper)]">
         <Header />
         <main id="main-content">
           <h1 className="sr-only">

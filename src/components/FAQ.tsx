@@ -1,161 +1,157 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { PlateLabel, BotanicalSprig } from "./Decor";
+
+const FAQS = [
+  {
+    q: "Wie läuft ein Projekt ab?",
+    a: "Nach einer kostenlosen Erstberatung erstellen wir ein individuelles Angebot. Nach Auftragserteilung planen wir gemeinsam mit Ihnen die Details und setzen das Projekt professionell um.",
+  },
+  {
+    q: "Wie lange dauert die Umsetzung?",
+    a: "Die Dauer hängt vom Umfang des Projekts ab. Kleinere Arbeiten können oft innerhalb weniger Tage abgeschlossen werden, größere Projekte benötigen entsprechend mehr Zeit.",
+  },
+  {
+    q: "Übernehmen Sie auch die Pflege nach der Fertigstellung?",
+    a: "Ja, wir bieten regelmäßige Gartenpflege an. Von der wöchentlichen Rasenpflege bis zur jährlichen Baumpflege — wir kümmern uns um Ihren Garten.",
+  },
+  {
+    q: "Arbeiten Sie auch an Wochenenden?",
+    a: "Samstags sind wir nach Absprache im Einsatz. Sonntags führen wir keine Arbeiten durch.",
+  },
+  {
+    q: "Benötige ich eine Baugenehmigung?",
+    a: "Das hängt vom Umfang der Arbeiten ab. Bei größeren Umgestaltungen oder Baumaßnahmen beraten wir Sie gerne zu den rechtlichen Anforderungen.",
+  },
+  {
+    q: "Können Sie auch bestehende Gärten umgestalten?",
+    a: "Selbstverständlich! Wir übernehmen sowohl komplette Neuanlagen als auch die Umgestaltung und Modernisierung bestehender Gärten.",
+  },
+];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [isDesktop, setIsDesktop] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-  
-  useEffect(() => {
-    const check = () => setIsDesktop(window.innerWidth >= 1024);
-    check();
-    window.addEventListener("resize", check);
-    return () => window.removeEventListener("resize", check);
-  }, []);
-  
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const faqs = [
-    {
-      question: "Wie läuft ein Projekt ab?",
-      answer: "Nach einer kostenlosen Erstberatung erstellen wir ein individuelles Angebot. Nach Auftragserteilung planen wir gemeinsam mit Ihnen die Details und setzen das Projekt professionell um."
-    },
-    {
-      question: "Wie lange dauert die Umsetzung?",
-      answer: "Die Dauer hängt vom Umfang des Projekts ab. Kleinere Arbeiten können oft innerhalb weniger Tage abgeschlossen werden, größere Projekte benötigen entsprechend mehr Zeit."
-    },
-    {
-      question: "Übernehmen Sie auch die Pflege nach der Fertigstellung?",
-      answer: "Ja, wir bieten regelmäßige Gartenpflege an. Von der wöchentlichen Rasenpflege bis zur jährlichen Baumpflege - wir kümmern uns um Ihren Garten."
-    },
-    {
-      question: "Arbeiten Sie auch an Wochenenden?",
-      answer: "Samstags sind wir nach Absprache im Einsatz. Sonntags führen wir keine Arbeiten durch."
-    },
-    {
-      question: "Benötige ich eine Baugenehmigung?",
-      answer: "Das hängt vom Umfang der Arbeiten ab. Bei größeren Umgestaltungen oder Baumaßnahmen beraten wir Sie gerne zu den rechtlichen Anforderungen."
-    },
-    {
-      question: "Können Sie auch bestehende Gärten umgestalten?",
-      answer: "Selbstverständlich! Wir übernehmen sowohl komplette Neuanlagen als auch die Umgestaltung und Modernisierung bestehender Gärten."
-    }
-  ];
+  const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-16 md:py-24 bg-[#009746]/10" ref={containerRef}>
-      <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-0 lg:pr-8">
-        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 md:mb-16 text-[#009746] text-center px-0 lg:px-8">
-          HÄUFIGE FRAGEN
-        </h2>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
-          {/* Questions on the left */}
-          <div className="space-y-3 md:space-y-4 pl-0">
-            {faqs.map((faq, index) => {
-              return (
-                <FAQCard
-                  key={index}
-                  faq={faq}
-                  index={index}
-                  isOpen={openIndex === index}
-                  onToggle={() => setOpenIndex(openIndex === index ? null : index)}
-                  isDesktop={isDesktop}
-                  scrollYProgress={scrollYProgress}
-                  totalFaqs={faqs.length}
-                />
-              );
-            })}
+    <section
+      id="faq"
+      className="relative py-24 md:py-32 bg-[var(--paper-warm)] overflow-hidden"
+      aria-labelledby="faq-heading"
+    >
+      <div className="absolute inset-0 paper-grain" aria-hidden />
+
+      <div className="relative z-10 mx-auto max-w-[1480px] px-6 md:px-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          <div className="lg:col-span-5">
+            <PlateLabel index="VII" title="Disputatio" />
+            <h2
+              id="faq-heading"
+              className="mt-6 display-italic text-[var(--moss)] text-5xl md:text-6xl lg:text-7xl"
+            >
+              Häufige Fragen,
+              <br />
+              <span className="display-roman not-italic text-[var(--clay)]">
+                ehrliche Antworten.
+              </span>
+            </h2>
+            <p className="mt-6 font-body text-[var(--ink-soft)] text-lg leading-relaxed">
+              Was Kundinnen und Kunden vor dem ersten Spatenstich wissen wollen.
+              Wenn etwas fehlt — schreiben Sie uns. Wir antworten persönlich,
+              meist innerhalb von 48 Stunden.
+            </p>
+
+            <div className="mt-10 hidden lg:block relative">
+              <div className="absolute -left-6 top-0 w-44 h-44 text-[var(--leaf)]/40 sway">
+                <BotanicalSprig />
+              </div>
+              <div className="mt-48 pl-4 border-l-2 border-[var(--clay)]">
+                <p className="font-display italic text-[var(--moss)] text-xl">
+                  „Keine Frage ist zu klein, kein Vorhaben zu groß."
+                </p>
+                <p className="mt-2 label-mono text-[var(--moss)]/60">
+                  — Erstberatung, kostenlos
+                </p>
+              </div>
+            </div>
           </div>
 
-          {/* Large image on the right */}
-          <motion.div 
-            className="hidden lg:flex items-center justify-center"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            viewport={{ once: true }}
-          >
-            <Image
-              src="/9C075D66-6539-4AE4-A2E0-B0AF621D8FE6.png"
-              alt="Illustration häufig gestellter Fragen zur Gartengestaltung"
-              width={600}
-              height={600}
-              className="object-contain"
-            />
-          </motion.div>
+          <div className="lg:col-span-7">
+            <ol className="border-t border-[var(--moss)]/25">
+              {FAQS.map((f, i) => {
+                const isOpen = open === i;
+                return (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.45, delay: i * 0.05 }}
+                    className="border-b border-[var(--moss)]/25"
+                  >
+                    <button
+                      onClick={() => setOpen(isOpen ? null : i)}
+                      className="w-full py-6 md:py-7 flex items-start gap-5 md:gap-7 text-left group"
+                      aria-expanded={isOpen}
+                    >
+                      <span className="font-display italic text-[var(--clay)] text-3xl md:text-4xl leading-none w-12 shrink-0">
+                        Q.
+                      </span>
+                      <span className="flex-1 font-display text-[var(--moss)] text-xl md:text-2xl leading-snug pt-1">
+                        {f.q}
+                      </span>
+                      <span
+                        className={`shrink-0 w-8 h-8 border border-[var(--moss)]/40 flex items-center justify-center text-[var(--moss)] transition-transform duration-500 ${
+                          isOpen ? "rotate-45 bg-[var(--clay)] text-[var(--paper)] border-[var(--clay)]" : ""
+                        }`}
+                        aria-hidden
+                      >
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.4">
+                          <path d="M6 1 V 11 M 1 6 H 11" strokeLinecap="round" />
+                        </svg>
+                      </span>
+                    </button>
+
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.35, ease: "easeInOut" }}
+                          className="overflow-hidden"
+                        >
+                          <div className="pb-7 pl-[68px] md:pl-[76px] pr-8 flex gap-5 items-start">
+                            <span className="font-display italic text-[var(--leaf)] text-2xl md:text-3xl leading-none -ml-[60px] md:-ml-[68px] w-12 shrink-0">
+                              A.
+                            </span>
+                            <p className="font-body text-[var(--ink-soft)] text-base md:text-lg leading-relaxed">
+                              {f.a}
+                            </p>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.li>
+                );
+              })}
+            </ol>
+
+            <div className="mt-10 flex items-center justify-between gap-4 flex-wrap">
+              <p className="font-display italic text-[var(--ink-soft)] text-lg">
+                Ihre Frage ist nicht dabei?
+              </p>
+              <a
+                href="/#kontakt"
+                className="inline-flex items-center gap-2 label-mono text-[var(--clay)] hover:text-[var(--clay-dark)] transition-colors"
+              >
+                Direkt fragen →
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function FAQCard({ faq, index, isOpen, onToggle, isDesktop, scrollYProgress, totalFaqs }: {
-  faq: { question: string; answer: string };
-  index: number;
-  isOpen: boolean;
-  onToggle: () => void;
-  isDesktop: boolean;
-  scrollYProgress: ReturnType<typeof useScroll>["scrollYProgress"];
-  totalFaqs: number;
-}) {
-  const start = Math.max(0, index / totalFaqs * 0.4);
-  const end = Math.min(1, start + 0.15);
-  
-  const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
-  const x = useTransform(scrollYProgress, [start, end], [-60, 0]);
-
-  const content = (
-    <>
-      <button
-        onClick={onToggle}
-        className="w-full px-4 md:px-6 py-3 md:py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
-      >
-        <span className="text-base md:text-lg font-bold text-[#009746] pr-2">
-          {faq.question}
-        </span>
-        <svg
-          className={`w-5 h-5 md:w-6 md:h-6 text-[#009746] transform transition-transform flex-shrink-0 ${
-            isOpen ? "rotate-180" : ""
-          }`}
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      {isOpen && (
-        <div className="px-4 md:px-6 pb-4 text-sm md:text-base text-gray-700">
-          {faq.answer}
-        </div>
-      )}
-    </>
-  );
-
-  if (isDesktop) {
-    return (
-      <motion.div
-        style={{ opacity, x }}
-        className="bg-white border-2 border-[#009746] rounded-2xl overflow-hidden"
-      >
-        {content}
-      </motion.div>
-    );
-  }
-
-  return (
-    <div className="bg-white border-2 border-[#009746] rounded-2xl overflow-hidden">
-      {content}
-    </div>
   );
 }
