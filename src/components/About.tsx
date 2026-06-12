@@ -64,7 +64,7 @@ export default function About() {
                 <span className="float-left mr-3 mt-1 font-display text-[var(--clay)] text-[88px] leading-[0.7] not-italic">
                   S
                 </span>
-                eit über zehn Jahren legen wir Gärten an, die nicht in Kataloge
+                eit über sechs Jahren legen wir Gärten an, die nicht in Kataloge
                 gehören. Jedes Stück Erde, das wir bewegen, beginnt mit einem
                 Spaziergang über das Grundstück, einer Skizze auf Papier und
                 einem Gespräch — niemals mit einer Schablone.

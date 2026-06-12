@@ -159,7 +159,7 @@ export default function Hero() {
               transition={{ duration: 1, delay: 1.1 }}
               className="mt-14 grid grid-cols-3 max-w-md gap-4 border-t border-[var(--moss)]/15 pt-6"
             >
-              <Stat num="10+" label="Jahre Erfahrung" />
+              <Stat num="6+" label="Jahre Erfahrung" />
               <Stat num="380" label="Projekte" />
               <Stat num="100%" label="Saarbrücken" />
             </motion.div>
