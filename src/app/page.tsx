@@ -14,7 +14,7 @@ function LocalBusinessSchema() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://www.galabaueifler.de/#business",
-    name: "Galabau Eifler GmbH",
+    name: "Galabau Eifler",
     description:
       "Professioneller Garten- und Landschaftsbau in Saarbrücken. Gartengestaltung, Pflasterarbeiten, Baumpflege und mehr.",
     url: "https://www.galabaueifler.de",

@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Datenschutzerklärung",
   description:
-    "Datenschutzerklärung der Galabau Eifler GmbH – Informationen zum Datenschutz gemäß DSGVO.",
+    "Datenschutzerklärung der Galabau Eifler – Informationen zum Datenschutz gemäß DSGVO.",
   robots: { index: true, follow: true },
   alternates: { canonical: "/datenschutz" },
 };
@@ -65,7 +65,7 @@ export default function DatenschutzPage() {
                 Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
               </p>
               <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                <p className="font-semibold">Galabau Eifler GmbH</p>
+                <p className="font-semibold">Galabau Eifler</p>
                 <p>Kevin Eifler</p>
                 <p>Rastbachweg 13</p>
                 <p>66113 Saarbrücken</p>

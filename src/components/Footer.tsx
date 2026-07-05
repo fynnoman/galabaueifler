@@ -50,7 +50,7 @@ export default function Footer() {
               </div>
               <div>
                 <div className="font-display italic text-[var(--paper)] text-xl">
-                  Galabau Eifler GmbH
+                  Galabau Eifler
                 </div>
                 <div className="label-mono text-[var(--paper)]/60">
                   est. MMXIV · Saarbrücken
@@ -104,7 +104,7 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-[var(--paper)]/20 flex flex-wrap items-center justify-between gap-4">
           <p className="label-mono text-[var(--paper)]/60">
-            © {new Date().getFullYear()} Galabau Eifler GmbH — Alle Rechte vorbehalten
+            © {new Date().getFullYear()} Galabau Eifler — Alle Rechte vorbehalten
           </p>
           <p className="label-mono text-[var(--paper)]/50">
             designed by{" "}

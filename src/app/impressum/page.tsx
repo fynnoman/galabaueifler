@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Impressum",
   description:
-    "Impressum der Galabau Eifler GmbH – Angaben gemäß § 5 DDG.",
+    "Impressum der Galabau Eifler – Angaben gemäß § 5 DDG.",
   robots: { index: true, follow: true },
   alternates: { canonical: "/impressum" },
 };
@@ -26,7 +26,7 @@ export default function ImpressumPage() {
                 Angaben gemäß § 5 DDG
               </h2>
               <p>
-                Galabau Eifler GmbH
+                Galabau Eifler
                 <br />
                 Rastbachweg 13
                 <br />
@@ -38,7 +38,7 @@ export default function ImpressumPage() {
               <h2 className="text-2xl font-bold text-[#009746] mb-4">
                 Vertreten durch
               </h2>
-              <p>Geschäftsführer: Kevin Eifler</p>
+              <p>Inhaber: Kevin Eifler</p>
             </section>
 
             <section>

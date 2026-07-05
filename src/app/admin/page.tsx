@@ -408,10 +408,10 @@ function Dashboard() {
                 <div className="space-y-3">
                   <div>
                     <p className="text-xs text-neutral-400 uppercase tracking-wider">Firma</p>
-                    <p className="text-neutral-900 font-medium">Galabau Eifler GmbH</p>
+                    <p className="text-neutral-900 font-medium">Galabau Eifler</p>
                   </div>
                   <div>
-                    <p className="text-xs text-neutral-400 uppercase tracking-wider">Geschäftsführer</p>
+                    <p className="text-xs text-neutral-400 uppercase tracking-wider">Inhaber</p>
                     <p className="text-neutral-900 font-medium">Kevin Eifler</p>
                   </div>
                   <div>

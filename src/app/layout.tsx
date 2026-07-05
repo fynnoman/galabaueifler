@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     "Zaunbau",
     "Rollrasen",
   ],
-  authors: [{ name: "Galabau Eifler GmbH" }],
+  authors: [{ name: "Galabau Eifler" }],
   verification: {
     google: "googleb3500a0ecacad6bc",
   },

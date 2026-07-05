@@ -70,7 +70,7 @@ export default function Contact() {
 
               <div className="label-mono text-[var(--moss)]/60">Absender</div>
               <h3 className="mt-2 font-display italic text-[var(--moss)] text-3xl">
-                Galabau Eifler GmbH
+                Galabau Eifler
               </h3>
 
               <div className="mt-8 space-y-6">
