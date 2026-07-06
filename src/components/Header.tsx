@@ -5,12 +5,12 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV = [
-  { href: "/#leistungen", label: "Leistungen", num: "I" },
-  { href: "/#ueber-uns",  label: "Über uns",   num: "II" },
-  { href: "/#galerie",    label: "Katalog",    num: "III" },
-  { href: "/#vorher-nachher", label: "Vor & Nach", num: "IV" },
-  { href: "/#qualitaet",  label: "Tugenden",   num: "V" },
-  { href: "/#faq",        label: "Fragen",     num: "VI" },
+  { href: "/#leistungen", label: "Leistungen", num: "01" },
+  { href: "/#ueber-uns",  label: "Über uns",   num: "02" },
+  { href: "/#galerie",    label: "Projekte",   num: "03" },
+  { href: "/#vorher-nachher", label: "Vorher / Nachher", num: "04" },
+  { href: "/#qualitaet",  label: "Qualität",   num: "05" },
+  { href: "/#faq",        label: "Fragen",     num: "06" },
 ];
 
 export default function Header() {

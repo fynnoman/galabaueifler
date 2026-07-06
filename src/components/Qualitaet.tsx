@@ -5,46 +5,46 @@ import { PlateLabel, BotanicalSeal, FernFrond } from "./Decor";
 
 const TUGENDEN = [
   {
-    num: "I",
+    num: "01",
     title: "Fachkompetenz",
-    latin: "Peritia",
+    subtitle: "Wissen & Erfahrung",
     text:
-      "Ausgebildete Fachkräfte mit jahrelanger Erfahrung im Garten- und Landschaftsbau. Jedes Projekt wird mit höchster Sorgfalt und Präzision umgesetzt.",
+      "Ausgebildete Fachkräfte mit jahrelanger Erfahrung im Garten- und Landschaftsbau. Jedes Projekt setzen wir sorgfältig und sauber um.",
   },
   {
-    num: "II",
-    title: "Individuelle Beratung",
-    latin: "Colloquium",
+    num: "02",
+    title: "Persönliche Beratung",
+    subtitle: "Gespräch vor Ort",
     text:
-      "Persönliche Beratung vor Ort und maßgeschneiderte Lösungen für Ihren Garten. Wir hören zu und planen gemeinsam mit Ihnen.",
+      "Persönliche Beratung bei Ihnen zu Hause und Lösungen, die zu Ihrem Garten passen. Wir hören zu und planen gemeinsam mit Ihnen.",
   },
   {
-    num: "III",
+    num: "03",
     title: "Hochwertige Materialien",
-    latin: "Materia bona",
+    subtitle: "aus der Region",
     text:
-      "Wir verwenden ausschließlich geprüfte, langlebige Materialien von regionalen Lieferanten — für Ergebnisse, die Bestand haben.",
+      "Wir verwenden nur geprüfte, langlebige Materialien von regionalen Lieferanten — damit Ihr Garten lange schön bleibt.",
   },
   {
-    num: "IV",
+    num: "04",
     title: "Termintreue",
-    latin: "Fides temporis",
+    subtitle: "pünktlich & verlässlich",
     text:
-      "Zuverlässige Planung und pünktliche Umsetzung. Wir halten, was wir versprechen — termingerecht und im vereinbarten Rahmen.",
+      "Zuverlässige Planung und pünktliche Umsetzung. Wir halten, was wir versprechen — im vereinbarten Zeitrahmen.",
   },
   {
-    num: "V",
+    num: "05",
     title: "Sauberkeit & Ordnung",
-    latin: "Munditia",
+    subtitle: "sauberer Abschluss",
     text:
-      "Nach Abschluss der Arbeiten hinterlassen wir Ihr Grundstück sauber und aufgeräumt. Respekt vor Ihrem Eigentum ist selbstverständlich.",
+      "Wenn wir fertig sind, hinterlassen wir Ihr Grundstück sauber und aufgeräumt. Respekt vor Ihrem Eigentum ist für uns selbstverständlich.",
   },
   {
-    num: "VI",
+    num: "06",
     title: "Faire Preise",
-    latin: "Aequitas",
+    subtitle: "klar & transparent",
     text:
-      "Transparente Kostenaufstellung ohne versteckte Zusatzkosten. Sie erhalten ein faires Angebot, das Qualität und Preis in Einklang bringt.",
+      "Klare Kostenaufstellung ohne versteckte Zusatzkosten. Sie bekommen ein faires Angebot, das Preis und Leistung in Einklang bringt.",
   },
 ];
 
@@ -65,7 +65,7 @@ export default function Qualitaet() {
       <div className="relative z-10 mx-auto max-w-[1480px] px-6 md:px-12">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-3xl">
-            <PlateLabel index="VI" title="Tugenden" />
+            <PlateLabel index="06" title="Qualität" />
             <h2
               id="qualitaet-heading"
               className="mt-6 display-italic text-[var(--moss)] text-5xl md:text-7xl lg:text-8xl"
@@ -73,18 +73,17 @@ export default function Qualitaet() {
               Sechs Versprechen.
               <br />
               <span className="display-roman not-italic text-[var(--clay)]">
-                Mit der Hand unterschrieben.
+                Auf die wir uns festlegen.
               </span>
             </h2>
             <p className="mt-6 font-body text-[var(--ink-soft)] text-lg md:text-xl leading-relaxed max-w-2xl">
-              Eine Werkstatt lebt von ihrem Wort. Diese sechs Tugenden sind keine
-              Werbeversprechen — sie sind die innere Verfassung unseres Teams,
-              an die wir uns binden.
+              Ein Handwerksbetrieb lebt von seinem Wort. Diese sechs Punkte sind
+              keine Werbeversprechen — daran halten wir uns bei jedem Projekt.
             </p>
           </div>
 
           <div className="relative w-32 h-32 md:w-40 md:h-40 text-[var(--clay)]">
-            <BotanicalSeal label="Sechs Tugenden · Galabau Eifler · MMXXIV" />
+            <BotanicalSeal label="Unser Qualitätsversprechen · Galabau Eifler" />
           </div>
         </div>
 
@@ -112,7 +111,7 @@ export default function Qualitaet() {
                       {t.title}
                     </h3>
                     <span className="font-display italic text-[var(--leaf)] text-base">
-                      {t.latin}
+                      {t.subtitle}
                     </span>
                   </div>
                   <div className="mt-3 fine-rule w-16" aria-hidden />
@@ -123,7 +122,7 @@ export default function Qualitaet() {
               </div>
 
               <span className="absolute top-3 right-3 label-mono text-[var(--moss)]/40">
-                Art. {t.num}
+                Nr. {t.num}
               </span>
             </motion.li>
           ))}

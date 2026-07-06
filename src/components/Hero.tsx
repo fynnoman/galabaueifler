@@ -33,14 +33,14 @@ export default function Hero() {
       {/* Konturlinien als Atmosphäre */}
       <ContourLines className="absolute -top-12 -right-32 w-[900px] text-[var(--moss)]/15" />
 
-      {/* Linke Sidebar — Tafel-Marker */}
+      {/* Linke Sidebar */}
       <div className="hidden md:flex flex-col items-center gap-4 absolute left-4 lg:left-8 top-40 z-10">
         <span className="label-mono text-[var(--moss)]/70 [writing-mode:vertical-rl]">
-          Tafel I · Eröffnung
+          Willkommen
         </span>
         <span className="h-24 w-px bg-[var(--moss)]/40" />
         <span className="label-mono text-[var(--clay)] [writing-mode:vertical-rl]">
-          MMXIV
+          seit 2014
         </span>
       </div>
 
@@ -63,9 +63,9 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="flex items-center justify-between flex-wrap gap-4"
         >
-          <PlateLabel index="I" title="Der Garten" />
+          <PlateLabel index="01" title="Der Garten" />
           <div className="flex items-center gap-3">
-            <span className="label-mono text-[var(--moss)]/60">№ 01 / VII</span>
+            <span className="label-mono text-[var(--moss)]/60">Startseite</span>
           </div>
         </motion.div>
 
@@ -114,14 +114,14 @@ export default function Hero() {
               className="mt-10 md:mt-12 max-w-xl"
             >
               <p className="font-body text-[var(--ink-soft)] text-xl md:text-2xl leading-relaxed">
-                Planung, Anlage und Pflege von Außenräumen rund um Saarbrücken.
-                Aus einer Hand — mit der Sorgfalt eines Botanikers und der
-                Präzision eines Steinmetz.
+                Planung, Anlage und Pflege von Gärten rund um Saarbrücken.
+                Alles aus einer Hand — von der ersten Idee bis zur laufenden
+                Pflege.
               </p>
 
               <div className="mt-6 flex items-center gap-3">
                 <span className="font-display italic text-[var(--leaf)] text-base">
-                  Hortus saraviensis
+                  Garten- und Landschaftsbau
                 </span>
                 <span className="h-px w-12 bg-[var(--moss)]/40" />
                 <span className="label-mono text-[var(--moss)]/60">seit 2014</span>
@@ -175,7 +175,7 @@ export default function Hero() {
             >
               {/* Plate header */}
               <div className="flex items-center justify-between pb-3 border-b border-[var(--moss)]/40 mb-3">
-                <span className="label-mono text-[var(--moss)]">Fig. 01</span>
+                <span className="label-mono text-[var(--moss)]">Projekt</span>
                 <span className="font-display italic text-[var(--ink-soft)]">
                   Privatgarten · Saarbrücken-West
                 </span>
@@ -209,9 +209,9 @@ export default function Hero() {
 
               {/* Plate footer */}
               <div className="flex items-baseline justify-between pt-3 border-t border-[var(--moss)]/40 mt-3">
-                <span className="label-mono text-[var(--moss)]/70">Foto · Atelier</span>
+                <span className="label-mono text-[var(--moss)]/70">Foto · eigenes Team</span>
                 <span className="font-display italic text-[var(--clay)]">
-                  Rosa · Buxus · Pinus
+                  Rosen · Buchs · Kiefer
                 </span>
               </div>
 
@@ -242,17 +242,17 @@ export default function Hero() {
           className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 border-t border-[var(--moss)]/20"
         >
           {[
-            ["Gestaltung", "Concipere"],
-            ["Bepflanzung", "Plantare"],
-            ["Pflege", "Curare"],
-            ["Pflasterbau", "Sternere"],
-          ].map(([de, lat], i) => (
+            ["Gestaltung", "planen & entwerfen"],
+            ["Bepflanzung", "pflanzen & anlegen"],
+            ["Pflege", "pflegen & erhalten"],
+            ["Pflasterbau", "Wege & Terrassen"],
+          ].map(([de, sub], i) => (
             <div
               key={de}
               className={`py-5 px-4 ${i !== 3 ? "md:border-r" : ""} ${i < 2 ? "border-b md:border-b-0" : ""} ${i !== 1 ? "border-r" : ""} border-[var(--moss)]/15`}
             >
               <div className="font-display italic text-[var(--moss)] text-xl md:text-2xl">{de}</div>
-              <div className="label-mono text-[var(--leaf-soft)] mt-1">{lat}</div>
+              <div className="label-mono text-[var(--leaf-soft)] mt-1">{sub}</div>
             </div>
           ))}
         </motion.div>

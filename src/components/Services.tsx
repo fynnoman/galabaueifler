@@ -6,66 +6,66 @@ import { PlateLabel, BotanicalSprig, VineDivider, FernFrond } from "./Decor";
 type Service = {
   num: string;
   title: string;
-  latin: string;
+  subtitle: string;
   desc: string;
   icon: React.ReactNode;
 };
 
 const SERVICES: Service[] = [
   {
-    num: "I",
+    num: "01",
     title: "Gartengestaltung",
-    latin: "Hortus designare",
-    desc: "Vom ersten Konzeptbild bis zur Übergabe — Planung, Visualisierung und vollständige Anlage neuer Außenräume.",
+    subtitle: "planen & anlegen",
+    desc: "Vom ersten Entwurf bis zur Übergabe — wir planen und legen Ihren neuen Garten komplett an.",
     icon: <Tool d="M 6 30 L 30 6 M 8 28 L 22 14 M 24 12 a 4 4 0 1 1 -2 -2 z M 4 32 l 4 -4" />,
   },
   {
-    num: "II",
+    num: "02",
     title: "Pflasterarbeiten",
-    latin: "Pavimenta sternere",
-    desc: "Terrassen, Wege, Einfahrten — Natur- und Betonstein, fachgerecht verlegt mit korrektem Unterbau und Gefälle.",
+    subtitle: "Wege · Terrassen · Einfahrten",
+    desc: "Terrassen, Wege und Einfahrten — Natur- oder Betonstein, fachgerecht verlegt mit sauberem Unterbau und Gefälle.",
     icon: <Tool d="M 4 20 H 32 M 4 26 H 32 M 4 14 H 32 M 10 14 V 8 H 16 V 14 M 18 20 V 14 H 24 V 20 M 8 26 V 20 H 14 V 26 M 22 26 V 20 H 28 V 26" />,
   },
   {
-    num: "III",
+    num: "03",
     title: "Baumpflege",
-    latin: "Arboris cura",
-    desc: "Kronenpflege, Erziehungsschnitt, sichere Fällung — auch in beengter Lage. Mit Klettertechnik und Hubarbeitsbühne.",
+    subtitle: "schneiden · fällen · sichern",
+    desc: "Kronenpflege, Formschnitt und sichere Fällung — auch bei wenig Platz. Mit Klettertechnik und Hubarbeitsbühne.",
     icon: <Tool d="M 18 32 V 18 M 12 20 a 6 6 0 1 1 12 0 M 14 14 a 5 5 0 1 1 8 0 M 16 9 a 3 3 0 1 1 4 0" />,
   },
   {
-    num: "IV",
+    num: "04",
     title: "Rasen & Rollrasen",
-    latin: "Gramen perfectum",
-    desc: "Anlage, Nachsaat, Vertikutieren, Düngung, regelmäßiger Schnitt. Auf Wunsch Rollrasen in Premiumqualität.",
+    subtitle: "anlegen & pflegen",
+    desc: "Anlage, Nachsaat, Vertikutieren, Düngung und regelmäßiger Schnitt. Auf Wunsch Rollrasen in Premiumqualität.",
     icon: <Tool d="M 4 28 H 32 M 6 28 V 22 M 10 28 V 18 M 14 28 V 20 M 18 28 V 16 M 22 28 V 22 M 26 28 V 20 M 30 28 V 24" />,
   },
   {
-    num: "V",
-    title: "Zaun- & Sichtschutzbau",
-    latin: "Saepes erigere",
-    desc: "Holz, Metall, WPC oder lebende Hecke — Lieferung und Montage inklusive Fundamentarbeiten und Toranlagen.",
+    num: "05",
+    title: "Zaun & Sichtschutz",
+    subtitle: "Holz · Metall · Hecke",
+    desc: "Holz, Metall, WPC oder lebende Hecke — Lieferung und Montage inklusive Fundament und Toranlagen.",
     icon: <Tool d="M 4 30 H 32 M 8 30 V 10 L 10 8 L 12 10 V 30 M 16 30 V 6 L 18 4 L 20 6 V 30 M 24 30 V 10 L 26 8 L 28 10 V 30 M 8 18 H 28 M 8 22 H 28" />,
   },
   {
-    num: "VI",
+    num: "06",
     title: "Gartenpflege",
-    latin: "Hortus servare",
-    desc: "Wöchentlich, vierteljährlich oder einmalig — Schnitt, Düngung, Unkraut, Laub. Vertrag oder nach Stunde.",
+    subtitle: "regelmäßig oder einmalig",
+    desc: "Wöchentlich, vierteljährlich oder einmalig — Schnitt, Düngung, Unkraut und Laub. Als Vertrag oder nach Stunde.",
     icon: <Tool d="M 6 28 a 12 12 0 0 1 24 0 M 18 16 V 28 M 12 12 L 16 18 M 24 12 L 20 18 M 6 28 H 30" />,
   },
   {
-    num: "VII",
+    num: "07",
     title: "Rodung & Aushub",
-    latin: "Excavare et purgare",
-    desc: "Wurzelstockfräsen, Baumentfernung, Geländevorbereitung. Mit eigenem Maschinenpark und fachgerechter Entsorgung.",
+    subtitle: "Baum weg · Fläche frei",
+    desc: "Wurzelstockfräsen, Baumentfernung und Vorbereitung des Geländes. Mit eigenem Maschinenpark und Entsorgung.",
     icon: <Tool d="M 6 28 H 30 M 8 28 V 22 H 18 V 28 M 20 26 L 28 14 L 32 16 L 24 28 M 10 22 V 18 H 14 V 22" />,
   },
   {
-    num: "VIII",
+    num: "08",
     title: "Bewässerung",
-    latin: "Aquam ducere",
-    desc: "Tröpfchen- und Versenkregner — automatisierte Bewässerung mit Steuerung per App, Sensor und Wetterdaten.",
+    subtitle: "automatisch bewässern",
+    desc: "Tröpfchen- und Versenkregner — automatische Bewässerung, Steuerung per App, Sensor und Wetterdaten.",
     icon: <Tool d="M 18 6 C 12 14 8 20 8 24 a 10 10 0 0 0 20 0 c 0 -4 -4 -10 -10 -18 z M 14 22 a 4 4 0 0 0 4 4" />,
   },
 ];
@@ -91,23 +91,22 @@ export default function Services() {
       <div className="relative z-10 mx-auto max-w-[1480px] px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-16 md:mb-24 items-end">
           <div className="lg:col-span-7">
-            <PlateLabel index="II" title="Leistungen" />
+            <PlateLabel index="02" title="Leistungen" />
             <h2
               id="leistungen-heading"
               className="mt-6 display-italic text-[var(--moss)] text-5xl md:text-7xl lg:text-8xl"
             >
-              Acht Disziplinen,
+              Acht Leistungen,
               <br />
               <span className="display-roman not-italic text-[var(--clay)]">eine Handschrift.</span>
             </h2>
           </div>
           <div className="lg:col-span-5">
             <p className="font-body text-[var(--ink-soft)] text-lg md:text-xl leading-relaxed">
-              Jedes Vorhaben — vom Reihenhausgarten bis zur Gewerbeanlage —
-              durchläuft denselben Werkstattprozess: Aufmaß, Skizze, Auswahl der
-              Materialien, Ausführung durch das eigene Team. Wir setzen
-              ausschließlich Pflanzen und Steine, deren Herkunft und
-              Verarbeitungsfähigkeit wir kennen.
+              Jedes Projekt — vom Reihenhausgarten bis zur Gewerbeanlage —
+              läuft bei uns gleich ab: Aufmaß, Skizze, Auswahl der Materialien,
+              Ausführung durch unser eigenes Team. Wir verwenden nur Pflanzen
+              und Steine, deren Herkunft und Qualität wir kennen.
             </p>
             <div className="mt-6 flex items-center gap-3">
               <span className="font-hand text-[var(--clay)] text-xl rotate-[-2deg]">
@@ -140,8 +139,8 @@ export default function Services() {
                 <span className="absolute bottom-2 right-2 w-2 h-2 border-r border-b border-[var(--moss)]/40" />
 
                 <div className="flex items-start justify-between">
-                  <span className="label-mono text-[var(--clay)]">{`№ ${s.num}`}</span>
-                  <span className="label-mono text-[var(--moss)]/50">Spec.</span>
+                  <span className="label-mono text-[var(--clay)]">{`Nr. ${s.num}`}</span>
+                  <span className="label-mono text-[var(--moss)]/50">Leistung</span>
                 </div>
 
                 <div className="my-6 flex items-end gap-4">
@@ -156,7 +155,7 @@ export default function Services() {
                   {s.title}
                 </h3>
                 <div className="font-display italic text-[var(--leaf)] text-sm mt-1">
-                  {s.latin}
+                  {s.subtitle}
                 </div>
 
                 <p className="mt-4 font-body text-[var(--ink-soft)] text-base leading-relaxed">

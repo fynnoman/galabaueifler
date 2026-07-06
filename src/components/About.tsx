@@ -26,13 +26,12 @@ export default function About() {
         <div className="flex items-start justify-between gap-4 flex-wrap">
           <div className="text-[var(--paper)]">
             <div className="inline-flex items-center gap-3">
-              <span className="label-mono text-[var(--clay)]/90">Tafel</span>
-              <span className="label-mono text-[var(--clay)]/90">III</span>
+              <span className="label-mono text-[var(--clay)]/90">03</span>
               <span className="h-px w-12 bg-[var(--paper)]/40" aria-hidden />
-              <span className="label-mono">Atelier</span>
+              <span className="label-mono">Über uns</span>
             </div>
           </div>
-          <span className="label-mono text-[var(--paper)]/60">№ 03 / VII</span>
+          <span className="label-mono text-[var(--paper)]/60">Team & Werte</span>
         </div>
 
         <div className="mt-12 md:mt-16 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
@@ -64,17 +63,16 @@ export default function About() {
                 <span className="float-left mr-3 mt-1 font-display text-[var(--clay)] text-[88px] leading-[0.7] not-italic">
                   S
                 </span>
-                eit über sechs Jahren legen wir Gärten an, die nicht in Kataloge
-                gehören. Jedes Stück Erde, das wir bewegen, beginnt mit einem
+                eit über sechs Jahren legen wir Gärten an, die zu den Menschen
+                passen, die darin leben. Jedes Projekt beginnt mit einem
                 Spaziergang über das Grundstück, einer Skizze auf Papier und
-                einem Gespräch — niemals mit einer Schablone.
+                einem Gespräch — nie mit einer Schablone.
               </p>
               <p>
                 Wir sind ein kleines, festes Team. Keine wechselnden
-                Subunternehmer, kein durchgereichter Auftrag. Wer Sie berät,
-                steht später auch mit der Schaufel in Ihrem Garten — und
-                erinnert sich beim Pflegetermin noch an den Geländeknick links
-                hinter der Eibe.
+                Subunternehmer, kein weitergereichter Auftrag. Wer Sie berät,
+                steht später auch mit der Schaufel in Ihrem Garten — und weiß
+                beim Pflegetermin noch, wo damals welche Pflanze gesetzt wurde.
               </p>
             </motion.div>
 
@@ -90,11 +88,11 @@ export default function About() {
                 „
               </div>
               <p className="font-display italic text-[var(--paper)] text-2xl md:text-3xl leading-snug">
-                Ein guter Garten wird nicht gebaut. Er wird gehört, gelesen und
-                dann angelegt.
+                Ein guter Garten wird nicht gebaut. Er wird zuerst verstanden
+                und dann angelegt.
               </p>
               <footer className="mt-4 label-mono text-[var(--paper)]/70">
-                — Werkstatt-Grundsatz
+                — unser Grundsatz
               </footer>
             </motion.blockquote>
 
@@ -107,9 +105,9 @@ export default function About() {
               className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-[var(--paper)]/20 pt-8"
             >
               {[
-                ["MMXIV", "Gegründet"],
+                ["2014", "Gegründet"],
                 ["6+", "Festes Team"],
-                ["380+", "Anlagen"],
+                ["380+", "Projekte"],
                 ["48 h", "Erstantwort"],
               ].map(([num, label]) => (
                 <div key={label}>
@@ -132,7 +130,7 @@ export default function About() {
               className="relative"
             >
               <div className="flex items-baseline justify-between pb-3 border-b border-[var(--paper)]/30 mb-3">
-                <span className="label-mono text-[var(--paper)]/80">Fig. 02</span>
+                <span className="label-mono text-[var(--paper)]/80">Unser Team</span>
                 <span className="font-display italic text-[var(--paper)]/90">
                   Das Team bei der Arbeit
                 </span>
@@ -155,7 +153,7 @@ export default function About() {
               </div>
 
               <div className="flex items-baseline justify-between pt-3 border-t border-[var(--paper)]/30 mt-3">
-                <span className="label-mono text-[var(--paper)]/70">Atelier · 2024</span>
+                <span className="label-mono text-[var(--paper)]/70">Team · 2024</span>
                 <span className="label-mono text-[var(--clay)]">Saarbrücken</span>
               </div>
 

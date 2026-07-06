@@ -8,7 +8,7 @@ type Item = {
   src: string;
   alt: string;
   title: string;
-  latin: string;
+  subtitle: string;
   note: string;
 };
 
@@ -17,29 +17,29 @@ const SMALL_ITEMS: Item[] = [
     src: "/A3A87027-B286-43A9-8B83-CF8B100B4477_1_105_c.jpeg",
     alt: "Neu angelegte Rasenfläche",
     title: "Rasenanlage",
-    latin: "Gramen novum",
-    note: "Vollflächiger Aushub, Substratwechsel, frischer Rollrasen — dicht und gleichmäßig vom ersten Tag an.",
+    subtitle: "neuer Rasen",
+    note: "Vollflächiger Aushub, neuer Boden, frischer Rollrasen — dicht und gleichmäßig vom ersten Tag an.",
   },
   {
     src: "/26C2764C-810A-42F3-8AC0-530A26973299_1_105_c.jpeg",
     alt: "Sauber geschnittene Hecke",
     title: "Heckenschnitt",
-    latin: "Sepes tonsa",
-    note: "Auf Linie geschnitten — gleichmäßige Höhe, saubere Flanken, klare Kanten.",
+    subtitle: "sauber in Form",
+    note: "Auf Linie geschnitten — gleichmäßige Höhe, saubere Flanken und klare Kanten.",
   },
   {
     src: "/AA2B7DD7-BBA1-48E6-8524-9C080D345CE2_1_105_c.jpeg",
     alt: "Verlegte Platten- und Fliesenarbeiten im Außenbereich",
     title: "Plattenarbeiten",
-    latin: "Lapides positi",
-    note: "Großformatige Platten, exakt im Versatz verlegt — auf Drainage-Unterbau für jahrzehntelange Standfestigkeit.",
+    subtitle: "verlegt & befestigt",
+    note: "Großformatige Platten, exakt im Versatz verlegt — auf Drainage-Unterbau, damit sie jahrzehntelang halten.",
   },
   {
     src: "/26EAA02B-5C07-4E25-8867-D20BCFF5AD20_1_105_c.jpeg",
     alt: "Weitere Heckenpflege mit formgebendem Schnitt",
     title: "Hecke · Form & Pflege",
-    latin: "Topiaria",
-    note: "Auch komplexe Heckenführungen halten wir Saison für Saison präzise in Form.",
+    subtitle: "regelmäßige Pflege",
+    note: "Auch aufwendige Heckenformen halten wir Saison für Saison sauber in Form.",
   },
 ];
 
@@ -47,18 +47,18 @@ const SHOWCASE = {
   src: "/F9AB677B-405D-4753-85E1-06C67DFB3A2F_1_105_c.jpeg",
   alt: "Komplette Gartenumgestaltung — finaler Zustand",
   title: "Komplettumgestaltung",
-  latin: "Hortus renovatus",
-  caption: "Vorgarten · von Brachland zu fertiger Anlage",
+  subtitle: "komplett neu angelegt",
+  caption: "Vorgarten · von Brachland zu fertigem Garten",
   intro:
-    "Wenn ein Garten von Grund auf neu gedacht werden muss, übernehmen wir den gesamten Prozess — vom ersten Aufmaß über die Entwurfsskizze bis zur Übergabe. Sie haben einen einzigen Ansprechpartner und am Ende ein Ergebnis aus einer Handschrift.",
+    "Wenn ein Garten komplett neu gedacht werden muss, übernehmen wir alles — vom ersten Aufmaß über die Skizze bis zur Übergabe. Sie haben einen einzigen Ansprechpartner und am Ende ein Ergebnis aus einer Hand.",
   facts: [
     { label: "Dauer", value: "4 – 8 Wochen" },
     { label: "Umfang", value: "Aushub bis Bepflanzung" },
-    { label: "Team", value: "Fest, kein Sub" },
+    { label: "Team", value: "eigenes Team, kein Sub" },
     { label: "Pflege", value: "auf Wunsch laufend" },
   ],
   quote:
-    "Wir haben am ersten Tag eine Skizze gemacht — am letzten stand exakt dieser Garten draußen.",
+    "Wir haben am ersten Tag eine Skizze gemacht — am letzten stand genau dieser Garten draußen.",
   quoteSource: "— Übergabegespräch, 2024",
 };
 
@@ -75,7 +75,7 @@ export default function Gallery() {
         {/* Header */}
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <PlateLabel index="IV" title="Katalog" />
+            <PlateLabel index="04" title="Projekte" />
             <h2
               id="galerie-heading"
               className="mt-6 display-italic text-[var(--moss)] text-5xl md:text-7xl lg:text-8xl"
@@ -83,13 +83,13 @@ export default function Gallery() {
               Ausgewählte Arbeiten,
               <br />
               <span className="display-roman not-italic text-[var(--clay)]">
-                aus dem Werkbuch.
+                aus unseren Projekten.
               </span>
             </h2>
           </div>
 
           <div className="text-right">
-            <div className="label-mono text-[var(--moss)]/70">№ 04 / VII</div>
+            <div className="label-mono text-[var(--moss)]/70">Referenzen</div>
             <div className="font-display italic text-[var(--ink-soft)] text-lg mt-1">
               Auswahl 2023 – 2024
             </div>
@@ -109,9 +109,9 @@ export default function Gallery() {
             >
               <div className="flex items-baseline justify-between pb-2 border-b border-[var(--moss)]/30">
                 <span className="label-mono text-[var(--clay)]">
-                  Fig. {String(i + 1).padStart(2, "0")}
+                  Nr. {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="label-mono text-[var(--moss)]/60">Tafel</span>
+                <span className="label-mono text-[var(--moss)]/60">Projekt</span>
               </div>
 
               <div className="relative aspect-[4/3] overflow-hidden bg-[var(--paper-deep)] border-x border-[var(--moss)]/20 group-hover:border-[var(--clay)]/50 transition-colors">
@@ -131,7 +131,7 @@ export default function Gallery() {
                     {item.title}
                   </h3>
                   <span className="font-display italic text-[var(--leaf)] text-sm shrink-0">
-                    {item.latin}
+                    {item.subtitle}
                   </span>
                 </div>
                 <p className="font-body text-[var(--ink-soft)] text-base mt-2 leading-snug">
@@ -153,13 +153,13 @@ export default function Gallery() {
           {/* Spread Header */}
           <div className="flex items-baseline justify-between gap-4 pb-3 border-b border-[var(--moss)]/30 flex-wrap">
             <div className="flex items-baseline gap-4">
-              <span className="label-mono text-[var(--clay)]">Fig. 05 · Showcase</span>
+              <span className="label-mono text-[var(--clay)]">Projekt Nr. 05 · Highlight</span>
               <span className="h-px w-10 bg-[var(--moss)]/40 hidden md:inline-block" />
               <span className="font-display italic text-[var(--ink-soft)] text-base">
-                Doppelseite · Komplett-Auftrag
+                Komplett-Auftrag
               </span>
             </div>
-            <span className="label-mono text-[var(--moss)]/60">Tafel V</span>
+            <span className="label-mono text-[var(--moss)]/60">Referenz</span>
           </div>
 
           <div className="mt-6 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
@@ -178,7 +178,7 @@ export default function Gallery() {
                 {/* Stempel oben links */}
                 <div className="absolute top-4 left-4 inline-flex items-center gap-2 bg-[var(--paper)] border border-[var(--moss)] px-3 py-1.5">
                   <span className="w-1.5 h-1.5 bg-[var(--clay)]" />
-                  <span className="label-mono text-[var(--moss)]">Showcase № 01</span>
+                  <span className="label-mono text-[var(--moss)]">Highlight-Projekt</span>
                 </div>
               </div>
 
@@ -197,7 +197,7 @@ export default function Gallery() {
 
             {/* Rechts — Editorial-Text */}
             <div className="lg:col-span-5 flex flex-col">
-              <span className="label-mono text-[var(--clay)]">Capitulum V</span>
+              <span className="label-mono text-[var(--clay)]">Kapitel 05</span>
               <h3 className="mt-3 display-italic text-[var(--moss)] text-4xl md:text-5xl lg:text-6xl leading-[0.9]">
                 Komplett&shy;
                 <span className="display-roman not-italic text-[var(--clay)]">
@@ -205,7 +205,7 @@ export default function Gallery() {
                 </span>
               </h3>
               <div className="mt-3 font-display italic text-[var(--leaf)]">
-                {SHOWCASE.latin}
+                {SHOWCASE.subtitle}
               </div>
 
               <p className="mt-6 font-body text-[var(--ink-soft)] text-lg leading-relaxed">
@@ -261,12 +261,12 @@ export default function Gallery() {
           {/* Spread Footer */}
           <div className="mt-10 pt-3 border-t border-[var(--moss)]/30 flex items-baseline justify-between flex-wrap gap-4">
             <span className="label-mono text-[var(--moss)]/60">
-              Galabau Eifler · Werkbuch · Saarbrücken
+              Galabau Eifler · Referenzen · Saarbrücken
             </span>
             <span className="font-display italic text-[var(--ink-soft)] text-base">
-              — Ende der Doppelseite —
+              — Ende der Projektvorstellung —
             </span>
-            <span className="label-mono text-[var(--moss)]/60">Seite 10 / 11</span>
+            <span className="label-mono text-[var(--moss)]/60">Projekt 05</span>
           </div>
         </motion.figure>
 
@@ -280,7 +280,7 @@ export default function Gallery() {
             href="/#kontakt"
             className="inline-flex items-center gap-3 px-6 py-3.5 border border-[var(--moss)]/40 text-[var(--moss)] hover:bg-[var(--moss)] hover:text-[var(--paper)] transition-colors"
           >
-            <span className="label-mono">Mappe anfragen</span>
+            <span className="label-mono">Referenzen anfragen</span>
             <svg
               width="18"
               height="14"

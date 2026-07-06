@@ -45,7 +45,7 @@ export default function FAQ() {
       <div className="relative z-10 mx-auto max-w-[1480px] px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
           <div className="lg:col-span-5">
-            <PlateLabel index="VII" title="Disputatio" />
+            <PlateLabel index="07" title="Häufige Fragen" />
             <h2
               id="faq-heading"
               className="mt-6 display-italic text-[var(--moss)] text-5xl md:text-6xl lg:text-7xl"
@@ -95,8 +95,8 @@ export default function FAQ() {
                       className="w-full py-6 md:py-7 flex items-start gap-5 md:gap-7 text-left group"
                       aria-expanded={isOpen}
                     >
-                      <span className="font-display italic text-[var(--clay)] text-3xl md:text-4xl leading-none w-12 shrink-0">
-                        Q.
+                      <span className="font-display italic text-[var(--clay)] text-xl md:text-2xl leading-none w-16 shrink-0 pt-1 whitespace-nowrap">
+                        Frage
                       </span>
                       <span className="flex-1 font-display text-[var(--moss)] text-xl md:text-2xl leading-snug pt-1">
                         {f.q}
@@ -122,9 +122,9 @@ export default function FAQ() {
                           transition={{ duration: 0.35, ease: "easeInOut" }}
                           className="overflow-hidden"
                         >
-                          <div className="pb-7 pl-[68px] md:pl-[76px] pr-8 flex gap-5 items-start">
-                            <span className="font-display italic text-[var(--leaf)] text-2xl md:text-3xl leading-none -ml-[60px] md:-ml-[68px] w-12 shrink-0">
-                              A.
+                          <div className="pb-7 pl-[84px] md:pl-[92px] pr-8 flex gap-5 items-start">
+                            <span className="font-display italic text-[var(--leaf)] text-xl md:text-2xl leading-none -ml-[72px] md:-ml-[80px] w-20 shrink-0 whitespace-nowrap pt-1">
+                              Antwort
                             </span>
                             <p className="font-body text-[var(--ink-soft)] text-base md:text-lg leading-relaxed">
                               {f.a}

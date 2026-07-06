@@ -9,11 +9,11 @@ interface BeforeAfterPair {
   before: string;
   after: string;
   label: string;
-  latin: string;
+  subtitle: string;
   note: string;
 }
 
-function BeforeAfterSlider({ before, after, label, latin, note, index }: BeforeAfterPair & { index: number }) {
+function BeforeAfterSlider({ before, after, label, subtitle, note, index }: BeforeAfterPair & { index: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [sliderPos, setSliderPos] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -37,9 +37,9 @@ function BeforeAfterSlider({ before, after, label, latin, note, index }: BeforeA
       {/* Plate Header */}
       <div className="flex items-baseline justify-between pb-2 border-b border-[var(--moss)]/30">
         <span className="label-mono text-[var(--clay)]">
-          Tafel · {String(index + 1).padStart(2, "0")}
+          Projekt · {String(index + 1).padStart(2, "0")}
         </span>
-        <span className="font-display italic text-[var(--leaf)] text-sm">{latin}</span>
+        <span className="font-display italic text-[var(--leaf)] text-sm">{subtitle}</span>
       </div>
 
       <div
@@ -113,10 +113,10 @@ function BeforeAfterSlider({ before, after, label, latin, note, index }: BeforeA
 
         {/* Etiketten in Sepia-Box */}
         <div className="absolute top-3 left-3 bg-[var(--paper)] border border-[var(--moss)]/60 px-3 py-1 label-mono text-[var(--moss)] z-10 pointer-events-none">
-          ante
+          Vorher
         </div>
         <div className="absolute top-3 right-3 bg-[var(--clay)] text-[var(--paper)] px-3 py-1 label-mono z-10 pointer-events-none">
-          post
+          Nachher
         </div>
       </div>
 
@@ -140,22 +140,22 @@ export default function BeforeAfter() {
       before: "/8A65735B-79DC-4CD0-8881-013B561327A5_1_105_c.jpeg",
       after: "/nachher1.jpeg",
       label: "Gartenumgestaltung",
-      latin: "Hortus renovatus",
-      note: "Aus Brachland mit alten Wurzelstücken wird ein gegliederter Wohngarten.",
+      subtitle: "Garten neu angelegt",
+      note: "Aus Brachland mit alten Wurzelresten wird ein fertig gestalteter Wohngarten.",
     },
     {
       before: "/8B362254-C4D7-4F7E-BC60-907C4E302F64_1_105_c.jpeg",
       after: "/nachher2.jpeg",
       label: "Pflasterarbeiten",
-      latin: "Pavimentum novum",
-      note: "Unebene Wege werden zu sauber verlegten Natursteinflächen.",
+      subtitle: "Wege neu gepflastert",
+      note: "Aus unebenen Wegen werden sauber verlegte Flächen aus Naturstein.",
     },
     {
       before: "/vorher3.jpeg",
       after: "/nachher3.jpeg",
       label: "Baumpflege",
-      latin: "Arbor curata",
-      note: "Verwilderte Krone behutsam zurückgeschnitten — Lichteinfall verdreifacht.",
+      subtitle: "Baum zurückgeschnitten",
+      note: "Verwilderte Krone behutsam zurückgeschnitten — deutlich mehr Licht im Garten.",
     },
   ];
 
@@ -170,20 +170,20 @@ export default function BeforeAfter() {
       <div className="relative z-10 mx-auto max-w-[1480px] px-6 md:px-12">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <PlateLabel index="V" title="Vor & Nach" />
+            <PlateLabel index="05" title="Vorher · Nachher" />
             <h2
               id="before-after-heading"
               className="mt-6 display-italic text-[var(--moss)] text-5xl md:text-7xl lg:text-8xl"
             >
-              ante &{" "}
-              <span className="display-roman not-italic text-[var(--clay)]">post</span>
+              Vorher &{" "}
+              <span className="display-roman not-italic text-[var(--clay)]">Nachher</span>
             </h2>
             <p className="mt-4 font-display italic text-[var(--ink-soft)] text-xl max-w-xl">
-              Drei Werkstätten, drei Verwandlungen. Den Regler ziehen — und den
-              Unterschied lesen.
+              Drei Projekte, drei Veränderungen. Regler ziehen und den
+              Unterschied selbst sehen.
             </p>
           </div>
-          <span className="label-mono text-[var(--moss)]/70">№ 05 / VII</span>
+          <span className="label-mono text-[var(--moss)]/70">Vergleich</span>
         </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

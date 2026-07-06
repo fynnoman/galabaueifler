@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
 
           <div className="absolute right-0 bottom-2 hidden md:block w-36 h-36 text-[var(--clay)]/90">
-            <BotanicalSeal label="Galabau Eifler · Atelier · Saarbrücken" />
+            <BotanicalSeal label="Galabau Eifler · Saarbrücken · seit 2014" />
           </div>
         </div>
 
@@ -53,7 +53,7 @@ export default function Footer() {
                   Galabau Eifler
                 </div>
                 <div className="label-mono text-[var(--paper)]/60">
-                  est. MMXIV · Saarbrücken
+                  seit 2014 · Saarbrücken
                 </div>
               </div>
             </div>
@@ -77,13 +77,13 @@ export default function Footer() {
           </div>
 
           <nav aria-label="Footer-Links" className="md:col-span-4">
-            <div className="label-mono text-[var(--clay)]/90 mb-4">Atelier</div>
+            <div className="label-mono text-[var(--clay)]/90 mb-4">Übersicht</div>
             <ul className="space-y-2 font-display italic text-[var(--paper)]/85 text-lg">
               <li><a href="#leistungen" className="hover:text-[var(--clay)] transition-colors">Leistungen</a></li>
               <li><a href="#ueber-uns" className="hover:text-[var(--clay)] transition-colors">Über uns</a></li>
-              <li><a href="#galerie" className="hover:text-[var(--clay)] transition-colors">Katalog</a></li>
-              <li><a href="#vorher-nachher" className="hover:text-[var(--clay)] transition-colors">Vor & Nach</a></li>
-              <li><a href="#qualitaet" className="hover:text-[var(--clay)] transition-colors">Tugenden</a></li>
+              <li><a href="#galerie" className="hover:text-[var(--clay)] transition-colors">Projekte</a></li>
+              <li><a href="#vorher-nachher" className="hover:text-[var(--clay)] transition-colors">Vorher / Nachher</a></li>
+              <li><a href="#qualitaet" className="hover:text-[var(--clay)] transition-colors">Qualität</a></li>
               <li><a href="#kontakt" className="hover:text-[var(--clay)] transition-colors">Kontakt</a></li>
             </ul>
           </nav>

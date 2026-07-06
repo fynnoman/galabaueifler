@@ -47,7 +47,7 @@ export default function Contact() {
       <div className="relative z-10 mx-auto max-w-[1480px] px-6 md:px-12">
         <div className="flex flex-wrap items-end justify-between gap-6 mb-12 md:mb-16">
           <div>
-            <PlateLabel index="VIII" title="Korrespondenz" />
+            <PlateLabel index="08" title="Kontakt" />
             <h2 className="mt-6 display-italic text-[var(--moss)] text-5xl md:text-7xl lg:text-8xl">
               Schreiben Sie uns,
               <br />
@@ -56,7 +56,7 @@ export default function Contact() {
               </span>
             </h2>
           </div>
-          <span className="label-mono text-[var(--moss)]/70">№ 06 / VII</span>
+          <span className="label-mono text-[var(--moss)]/70">Anfrage</span>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
@@ -65,21 +65,21 @@ export default function Contact() {
             <div className="relative bg-[var(--paper-warm)] border border-[var(--moss)]/25 p-8 md:p-10 shadow-[6px_6px_0_0_var(--paper-shadow)]">
               {/* Stempel */}
               <div className="absolute -top-6 -right-6 w-24 h-24 text-[var(--clay)] hidden md:block">
-                <BotanicalSeal label="Atelier · Galabau Eifler" />
+                <BotanicalSeal label="Galabau Eifler · Saarbrücken" />
               </div>
 
-              <div className="label-mono text-[var(--moss)]/60">Absender</div>
+              <div className="label-mono text-[var(--moss)]/60">Kontakt</div>
               <h3 className="mt-2 font-display italic text-[var(--moss)] text-3xl">
                 Galabau Eifler
               </h3>
 
               <div className="mt-8 space-y-6">
-                <ContactRow label="Werkstatt">
+                <ContactRow label="Adresse">
                   Rastbachweg 13<br />
                   66113 Saarbrücken
                 </ContactRow>
 
-                <ContactRow label="Fernsprecher">
+                <ContactRow label="Telefon">
                   <a
                     href="tel:+4915901776367"
                     className="hover:text-[var(--clay)] transition-colors underline decoration-[var(--moss)]/30 underline-offset-4"
@@ -88,7 +88,7 @@ export default function Contact() {
                   </a>
                 </ContactRow>
 
-                <ContactRow label="Schreiben">
+                <ContactRow label="E-Mail">
                   <a
                     href="mailto:galabau-eifler@gmx.de"
                     className="hover:text-[var(--clay)] transition-colors underline decoration-[var(--moss)]/30 underline-offset-4"
@@ -97,11 +97,11 @@ export default function Contact() {
                   </a>
                 </ContactRow>
 
-                <ContactRow label="Sprechzeiten">
+                <ContactRow label="Öffnungszeiten">
                   Mo – Fr · 08:00 – 17:00 Uhr<br />
                   Samstag · 08:00 – 13:00 Uhr<br />
                   <span className="font-display italic text-[var(--clay)]">
-                    Sonntag — Ruhetag
+                    Sonntag — geschlossen
                   </span>
                 </ContactRow>
               </div>
@@ -154,22 +154,22 @@ export default function Contact() {
             className="lg:col-span-7 relative"
           >
             <div className="bg-[var(--paper)] border border-[var(--moss)]/30 p-8 md:p-12 shadow-[8px_8px_0_0_var(--paper-shadow)]">
-              {/* Briefkopf */}
+              {/* Formular-Kopf */}
               <div className="flex items-baseline justify-between pb-4 border-b border-[var(--moss)]/25">
-                <span className="label-mono text-[var(--moss)]/70">Brief № — Anfrage</span>
+                <span className="label-mono text-[var(--moss)]/70">Anfrage</span>
                 <span className="font-display italic text-[var(--clay)]">
                   Saarbrücken, den …
                 </span>
               </div>
 
               <h3 className="mt-8 font-display italic text-[var(--moss)] text-3xl md:text-4xl">
-                Sehr geehrte Galabau Eifler,
+                Hallo Galabau Eifler,
               </h3>
 
               <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Field
                   id="contact-name"
-                  label="Mein Name ist"
+                  label="Ihr Name"
                   required
                   value={formData.name}
                   onChange={(v) => setFormData({ ...formData, name: v })}
@@ -177,7 +177,7 @@ export default function Contact() {
                 />
                 <Field
                   id="contact-email"
-                  label="Erreichbar unter"
+                  label="Ihre E-Mail"
                   type="email"
                   required
                   value={formData.email}
@@ -189,7 +189,7 @@ export default function Contact() {
               <div className="mt-6">
                 <Field
                   id="contact-telefon"
-                  label="oder telefonisch (optional)"
+                  label="Telefon (optional)"
                   type="tel"
                   value={formData.telefon}
                   onChange={(v) => setFormData({ ...formData, telefon: v })}
@@ -202,7 +202,7 @@ export default function Contact() {
                   htmlFor="contact-nachricht"
                   className="label-mono text-[var(--moss)]/70 block mb-2"
                 >
-                  Ich schreibe Ihnen wegen *
+                  Ihre Nachricht *
                 </label>
                 <textarea
                   id="contact-nachricht"
@@ -217,14 +217,14 @@ export default function Contact() {
                     backgroundPositionY: "10px",
                     lineHeight: "36px",
                   }}
-                  placeholder="… mein Garten, Pflasterarbeiten, eine Beratung …"
+                  placeholder="Worum geht es? Garten, Pflasterarbeiten, Beratung …"
                 />
               </div>
 
               {status === "success" && (
                 <div className="mt-6 border border-[var(--leaf)] bg-[var(--paper-warm)] p-4 font-display italic text-[var(--moss)]">
-                  Vielen Dank — Ihre Nachricht ist auf dem Werkstatttisch gelandet.
-                  Wir melden uns binnen 48 Stunden persönlich.
+                  Vielen Dank — Ihre Nachricht ist bei uns angekommen.
+                  Wir melden uns innerhalb von 48 Stunden persönlich.
                 </div>
               )}
               {status === "error" && (
@@ -237,7 +237,7 @@ export default function Contact() {
               <div className="mt-10 flex items-end justify-between gap-6 border-t border-[var(--moss)]/25 pt-6 flex-wrap">
                 <div>
                   <div className="font-hand text-[var(--moss)] text-3xl leading-none">
-                    Mit freundlichem Gruß
+                    Viele Grüße
                   </div>
                   <div className="label-mono text-[var(--moss)]/60 mt-2">
                     * Pflichtfelder · Daten werden vertraulich behandelt
@@ -250,7 +250,7 @@ export default function Contact() {
                   className="group inline-flex items-center gap-3 px-6 py-3.5 bg-[var(--clay)] text-[var(--paper)] hover:bg-[var(--clay-dark)] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   <span className="label-mono">
-                    {status === "sending" ? "wird gesendet …" : "Brief abschicken"}
+                    {status === "sending" ? "wird gesendet …" : "Nachricht senden"}
                   </span>
                   <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" strokeWidth="1.4" className="group-hover:translate-x-1 transition-transform">
                     <path d="M1 7 H 16 M 11 2 L 16 7 L 11 12" strokeLinecap="round" strokeLinejoin="round" />

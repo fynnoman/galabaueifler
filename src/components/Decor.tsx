@@ -27,7 +27,6 @@ export function PlateLabel({
 }) {
   return (
     <div className={`inline-flex items-center gap-3 ${className}`}>
-      <span className="label-mono text-[var(--clay)]">Tafel</span>
       <span className="label-mono text-[var(--clay)]">{index}</span>
       <span className="h-px w-12 bg-[var(--moss)]/40" aria-hidden />
       <span className="label-mono text-[var(--moss)]">{title}</span>
@@ -224,7 +223,7 @@ export function ContourLines({ className = "", ...rest }: SVGProps) {
 /* —— Botanisches Siegel —— */
 export function BotanicalSeal({
   className = "",
-  label = "Galabau Eifler · Saarbrücken · Anno MMXIV",
+  label = "Galabau Eifler · Saarbrücken · seit 2014",
 }: {
   className?: string;
   label?: string;
