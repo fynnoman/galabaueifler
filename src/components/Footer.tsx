@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
 
           <div className="absolute right-0 bottom-2 hidden md:block w-36 h-36 text-[var(--clay)]/90">
-            <BotanicalSeal label="Galabau Eifler · Saarbrücken · seit 2014" />
+            <BotanicalSeal label="Galabau Eifler · Saarbrücken · seit 2019" />
           </div>
         </div>
 
@@ -53,7 +53,7 @@ export default function Footer() {
                   Galabau Eifler
                 </div>
                 <div className="label-mono text-[var(--paper)]/60">
-                  seit 2014 · Saarbrücken
+                  seit 2019 · Saarbrücken
                 </div>
               </div>
             </div>

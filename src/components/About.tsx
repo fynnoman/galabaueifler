@@ -105,7 +105,7 @@ export default function About() {
               className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-[var(--paper)]/20 pt-8"
             >
               {[
-                ["2014", "Gegründet"],
+                ["2019", "Gegründet"],
                 ["6+", "Festes Team"],
                 ["380+", "Projekte"],
                 ["48 h", "Erstantwort"],

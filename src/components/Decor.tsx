@@ -223,7 +223,7 @@ export function ContourLines({ className = "", ...rest }: SVGProps) {
 /* —— Botanisches Siegel —— */
 export function BotanicalSeal({
   className = "",
-  label = "Galabau Eifler · Saarbrücken · seit 2014",
+  label = "Galabau Eifler · Saarbrücken · seit 2019",
 }: {
   className?: string;
   label?: string;

@@ -40,7 +40,7 @@ export default function Hero() {
         </span>
         <span className="h-24 w-px bg-[var(--moss)]/40" />
         <span className="label-mono text-[var(--clay)] [writing-mode:vertical-rl]">
-          seit 2014
+          seit 2019
         </span>
       </div>
 
@@ -124,7 +124,7 @@ export default function Hero() {
                   Garten- und Landschaftsbau
                 </span>
                 <span className="h-px w-12 bg-[var(--moss)]/40" />
-                <span className="label-mono text-[var(--moss)]/60">seit 2014</span>
+                <span className="label-mono text-[var(--moss)]/60">seit 2019</span>
               </div>
             </motion.div>
 
