@@ -6,9 +6,8 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/admin/"],
       },
     ],
-    sitemap: "https://www.galabaueifler.de/sitemap.xml",
+    sitemap: "https://www.galabau-eifler.de/sitemap.xml",
   };
 }

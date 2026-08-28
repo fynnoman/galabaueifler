@@ -43,15 +43,15 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Galabau Eifler" }],
   verification: {
-    google: "googleb3500a0ecacad6bc",
+    google: "4uChM-o6HLf_HjLYxIFfNaiKGVJfSg8E_H-rhedh-H4",
   },
   robots: { index: true, follow: true },
-  metadataBase: new URL("https://www.galabaueifler.de"),
+  metadataBase: new URL("https://www.galabau-eifler.de"),
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "de_DE",
-    url: "https://www.galabaueifler.de",
+    url: "https://www.galabau-eifler.de",
     siteName: "Galabau Eifler",
     title: "Galabau Eifler – Professioneller Garten- & Landschaftsbau Saarbrücken",
     description:
