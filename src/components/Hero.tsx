@@ -205,6 +205,10 @@ export default function Hero() {
                 <Corner className="top-2 right-2 rotate-90" />
                 <Corner className="bottom-2 left-2 -rotate-90" />
                 <Corner className="bottom-2 right-2 rotate-180" />
+                {/* KI-Hinweis */}
+                <span className="absolute top-2 right-6 label-mono text-[9px] tracking-[0.14em] text-[var(--paper)]/80">
+                  KI
+                </span>
               </div>
 
               {/* Plate footer */}

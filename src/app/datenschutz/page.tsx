@@ -187,7 +187,7 @@ export default function DatenschutzPage() {
 
             <div className="mt-12 p-6 bg-gray-50 rounded-lg">
               <p className="text-sm text-gray-600">
-                <strong>Stand:</strong> März 2026
+                <strong>Stand:</strong> Oktober 2026
               </p>
             </div>
           </div>
